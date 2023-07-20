@@ -1,10 +1,8 @@
 const Hero = () => {
 	const Counter = ({ title, count, active = false }) => {
-		let classes =
-			'w-full flex flex-col gap-0 px-6 text-center rounded-2xl rounded-tl-none';
-		if (active)
-			classes += ' bg-cyan-400 text-white shadow-lg shadow-cyan-400';
-		else classes += ' text-gray-400 border border-gray-400';
+		let classes = 'counter';
+		if (active) classes += ' counter-active';
+		else classes += ' counter-not-active';
 
 		return (
 			<div className={classes}>
@@ -16,14 +14,12 @@ const Hero = () => {
 	};
 
 	const ColleagueIcon = () => {
-		return (
-			<div className='aspect-square bg-gray-500 shadow-md w-12 rounded-full transition-all duration-200 hover:cursor-pointer hover:scale-[250%]'></div>
-		);
+		return <div className='colleague-icon'></div>;
 	};
 
 	return (
-		<div className='w-full p-0 m-0 h-screen flex'>
-			<div className='basis-1/4 flex flex-col items-center justify-around p-8'>
+		<div className='hero-container'>
+			<div className='hero-title-container'>
 				<div className='text-blue-950'>
 					<h2 className='text-7xl text-center'>بزرگـتریـن</h2>
 					<h6 className='text-3xl text-center'>
@@ -48,19 +44,17 @@ const Hero = () => {
 					/>
 				</div>
 			</div>
-			<div className='basis-3/4 p-2 pe-0'>
-				<div className='bg-gray-400 w-full h-full rounded-r-[4rem] flex items-end justify-center'>
-					<div className='w-4/5 bg-white rounded-t-[4rem] h-[8rem] flex flex-col justify-between'>
-						<div className='w-full flex justify-end items-center px-[4rem] pt-[1rem] gap-10'>
+			<div className='hero-app-container'>
+				<div className='hero-app-canvas'>
+					<div className='hero-colleagues'>
+						<div className='hero-colleagues-title'>
 							<p className='text-gray-400 text-xl'>
 								برند هایی که در این هفده سال افتخار همکاری با
 								آنها را داشتیم:
 							</p>
-							<button className='px-4 text-xl text-white rounded-full bg-gray-400'>
-								مشاهده همه
-							</button>
+							<button className='btn'>مشاهده همه</button>
 						</div>
-						<div className='w-full flex justify-center items-center px-[4rem] pt-[1rem] gap-8'>
+						<div className='colleagues-icon-container'>
 							{[...new Array(10)].map((item, index) => (
 								<ColleagueIcon key={index} />
 							))}

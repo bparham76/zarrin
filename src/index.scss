@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Yekan;
+    src: 
+        url('./resources/font/Yekan.eot') format('eot'),
+        url('./resources/font/Yekan.ttf') format('truetype'),
+        url('./resources/font/Yekan.woff') format('woff');
+}
+
+body{
+    font-family: Yekan;
+}
+
+@layer components {
+    .billboardselect {
+        @apply bg-white rounded-2xl p-2 flex items-center;
+        
+        .text {
+            @apply text-2xl w-[12rem] focus:outline-none;
+        }
+    }
+}
+
+@import './styles/hero.scss';

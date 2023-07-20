@@ -9,7 +9,7 @@ module.exports = {
         'primary' : '#f00'
       },
       boxShadow: {
-        'header':'0 3px 3px 0 cyan'
+        'header':'0 1px 3px 0 cyan'
       },
     },
   },

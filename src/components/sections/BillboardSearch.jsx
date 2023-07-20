@@ -1,17 +1,17 @@
-import React from 'react';
+import { FaChevronDown } from 'react-icons/fa6';
 
 const BillboardSearch = () => {
 	const SearchInput = ({ title = '' }) => {
 		return (
-			<div className='bg-white rounded-2xl p-2 flex items-center'>
+			<div className='billboardselect'>
 				<input
-					className='text-2xl w-[12rem] focus:outline-none'
+					className='text'
 					type='text'
 					name=''
 					id=''
 					placeholder={title}
 				/>
-				o
+				<FaChevronDown className='cursor-pointer' />
 			</div>
 		);
 	};
