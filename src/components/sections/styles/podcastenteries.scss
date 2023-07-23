@@ -3,17 +3,58 @@
 @layer components{
     @media screen and (min-width: theme('screens.lg')){
         .podcast-container{
-            @apply w-full bg-z-light-blue pt-24;
+            @apply w-full bg-gradient-to-b from-z-light-blue to-transparent pt-24;
 
             .items-container{
                 @apply flex flex-col items-end w-10/12 mx-auto px-12 pb-4 bg-gradient-to-b from-z-blue to-transparent rounded-t-[4rem];
                 
                 .title{
-                    @apply w-1/3 mx-auto bg-white rounded-[1rem] h-20 -translate-y-1/2 flex items-center justify-center;
+                    @apply cursor-default w-1/3 mx-auto bg-white rounded-[1rem] h-20 -translate-y-1/2 flex items-center justify-center;
                     box-shadow: 0 0 5px 0 white;
 
                     .heading {
                         @apply text-4xl text-z-dark-blue;
+                    }
+                }
+
+                .sections{
+                    @apply flex p-4 gap-8 w-full;
+
+                    .list{
+                        @apply basis-1/3;
+
+                        .entery{
+                            @apply w-full bg-white rounded-xl p-2 mb-8 cursor-pointer transition-all flex;
+
+                            .caption{
+                                @apply basis-2/3 p-4;
+
+                                h4{
+                                    @apply text-z-dark-blue text-xl font-bold;
+                                }
+                                p{
+                                    @apply text-z-blue text-xl font-normal;
+                                }
+                            }
+                            .img{
+                                @apply basis-1/3 aspect-square rounded-xl flex items-center justify-center bg-black;
+
+                                .play-icon{
+                                    @apply text-white opacity-50 w-2/3 h-2/3;
+                                }
+                            }
+                        }
+
+                        .entery:hover{
+                            box-shadow: 0 0 5px 0 darkslategray;
+                        }
+                        .entery:active{
+                            @apply scale-105;
+                        }
+                    }
+
+                    .canvas{
+                        @apply bg-white basis-2/3 rounded-xl;
                     }
                 }
             }

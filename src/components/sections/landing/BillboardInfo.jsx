@@ -60,6 +60,11 @@ const BillboardInfo = () => {
 								/>
 							))}
 						</Slider>
+						<div className='btn-container'>
+							<button className='btn-more'>
+								مشاهده بیشتر <FaChevronLeft />
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -84,6 +89,11 @@ const BillboardInfo = () => {
 								/>
 							))}
 						</Slider>
+						<div className='btn-container'>
+							<button className='btn-more'>
+								مشاهده بیشتر <FaChevronLeft />
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>

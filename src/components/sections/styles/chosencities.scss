@@ -30,7 +30,7 @@
             }
         
             .title {
-                @apply w-1/3 mx-auto translate-y-[-50%] h-24 rounded-xl bg-white;
+                @apply w-1/3 mx-auto translate-y-[-50%] h-24 rounded-xl bg-white cursor-default;
                 box-shadow: 0 0 10px 2px white;
             }
         

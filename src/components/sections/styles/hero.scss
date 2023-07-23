@@ -20,7 +20,7 @@
         }
 
         .counter {
-            @apply w-full flex flex-col gap-0 px-6 text-center rounded-2xl rounded-tl-none;
+            @apply w-full flex flex-col gap-0 px-6 text-center rounded-2xl rounded-tl-none cursor-default;
         }
 
         .counter-active {
@@ -51,7 +51,15 @@
                             @apply w-full flex justify-end items-center px-[4rem] pt-[1rem] gap-10;
 
                             .btn {
-                                @apply px-4 text-xl text-white rounded-full bg-gray-400;
+                                @apply px-4 text-xl text-white rounded-full bg-gray-400 transition-all;
+                            }
+
+                            .btn:hover{
+                                @apply bg-z-blue;
+                            }
+
+                            .btn:active{
+                                @apply scale-105;
                             }
                         }
 

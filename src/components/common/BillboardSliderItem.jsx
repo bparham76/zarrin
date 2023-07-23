@@ -7,7 +7,13 @@ import { HiOutlineBadgeCheck } from 'react-icons/hi';
 
 import { useState } from 'react';
 
-const BillboardSliderItem = ({ offer = false, size, title, location }) => {
+const BillboardSliderItem = ({
+	offer = false,
+	percent = 0,
+	size,
+	title,
+	location,
+}) => {
 	const [hover, isHover] = useState(false);
 
 	return (
@@ -16,7 +22,7 @@ const BillboardSliderItem = ({ offer = false, size, title, location }) => {
 			onMouseEnter={(e) => isHover(true)}
 			onMouseLeave={(e) => isHover(false)}>
 			{offer ? (
-				<div className='off-percent'>20%</div>
+				<div className='off-percent'>{percent}%</div>
 			) : (
 				<div className='check-badge'>
 					<HiOutlineBadgeCheck />
