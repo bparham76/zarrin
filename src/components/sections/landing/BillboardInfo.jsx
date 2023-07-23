@@ -38,7 +38,7 @@ const BillboardInfo = () => {
 
 	return (
 		<>
-			<div className='billboard-section'>
+			<div className='billboard-section higher'>
 				<div className='data'>
 					<div className='title red'>بیلبورد های تخفیف دار</div>
 					<div className='w-3/4 pb-4 relative'>
@@ -63,7 +63,7 @@ const BillboardInfo = () => {
 					</div>
 				</div>
 			</div>
-			<div className='billboard-section'>
+			<div className='billboard-section high'>
 				<div className='data'>
 					<div className='title blue'>بیلبورد های پر بازدید</div>
 					<div className='w-3/4 mx-auto relative'>

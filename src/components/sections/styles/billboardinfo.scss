@@ -3,7 +3,7 @@
 @layer components{
     @media screen and (min-width: theme('screens.lg')) {
         .billboard-section{
-            @apply w-full h-96 bg-gradient-to-b from-white to-z-light-blue overflow-visible relative;
+            @apply w-full bg-gradient-to-b from-white to-z-light-blue overflow-visible relative;
 
             .data{
                 @apply w-full left-0 top-0 -translate-y-full bg-white absolute h-20 rounded-t-full flex flex-col items-center;
@@ -28,6 +28,14 @@
             .carousel-control-right {
                 @apply absolute right-0 top-1/2 -translate-y-1/2 translate-x-full text-xl text-white bg-z-blue p-4 -mx-2 rounded-xl z-50;
             }
+        }
+
+        .billboard-section.higher{
+            @apply h-96;
+        }
+
+        .billboard-section.high {
+            @apply h-80;
         }
     }
 }

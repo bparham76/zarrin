@@ -1,0 +1,22 @@
+@tailwind components;
+
+@layer components{
+    @media screen and (min-width: theme('screens.lg')){
+        .podcast-container{
+            @apply w-full bg-z-light-blue pt-24;
+
+            .items-container{
+                @apply flex flex-col items-end w-10/12 mx-auto px-12 pb-4 bg-gradient-to-b from-z-blue to-transparent rounded-t-[4rem];
+                
+                .title{
+                    @apply w-1/3 mx-auto bg-white rounded-[1rem] h-20 -translate-y-1/2 flex items-center justify-center;
+                    box-shadow: 0 0 5px 0 white;
+
+                    .heading {
+                        @apply text-4xl text-z-dark-blue;
+                    }
+                }
+            }
+        }
+    }
+}
