@@ -1,9 +1,9 @@
-import './styles/billboardinfo.scss';
+import '../styles/billboardinfo.scss';
 import Slider from 'react-slick';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import { useRef, useLayoutEffect, useState } from 'react';
 
-import { BillboardSliderItem } from '../common';
+import { BillboardSliderItem } from '../../common';
 
 const BillboardInfo = () => {
 	const offeredSliderRed = useRef();

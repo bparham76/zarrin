@@ -1,7 +1,7 @@
-import Hero from "./Hero";
-import BillboardSearch from "./BillboardSearch";
-import ChosenCities from "./ChosenCities";
-import BillboardInfo from "./BillboardInfo";
+import Hero from "./landing/Hero";
+import BillboardSearch from "./landing/BillboardSearch";
+import ChosenCities from "./landing/ChosenCities";
+import BillboardInfo from "./landing/BillboardInfo";
 import Header from './Header';
 import Footer from './Footer';
 

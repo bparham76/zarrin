@@ -1,4 +1,4 @@
-import './styles/hero.scss';
+import '../styles/hero.scss';
 
 const Hero = () => {
 	const Counter = ({ title, count, active = false }) => {
