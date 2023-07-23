@@ -19,7 +19,6 @@ const Landing = () => {
 			<BillboardInfo />
 			<BlogEnteries />
 			<PodcastEnteries />
-			<div className='h-[100rem] w-full'></div>
 			<Footer />
 		</>
 	);
