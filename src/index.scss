@@ -2,17 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-    font-family: Yekan;
-    src: 
-        url('./resources/font/Yekan.eot') format('eot'),
-        url('./resources/font/Yekan.ttf') format('truetype'),
-        url('./resources/font/Yekan.woff') format('woff');
-}
+// @font-face {
+//     font-family: Yekan;
+//     src: 
+//         url('./resources/font/Yekan.eot') format('eot'),
+//         url('./resources/font/Yekan.ttf') format('truetype'),
+//         url('./resources/font/Yekan.woff') format('woff');
+// }
 
 body{
-    font-family: Yekan;
+    font-family: Yekan Bakh;
+    font-weight: bold;
 }
+
+@import './resources/font/stylesheet.css';
 
 @layer components {
     .billboardselect {
@@ -24,4 +27,5 @@ body{
     }
 }
 
-@import './styles/hero.scss';
+// @import './styles/hero.scss';
+// @import './styles/header.scss';

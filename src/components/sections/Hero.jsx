@@ -1,3 +1,5 @@
+import './styles/hero.scss';
+
 const Hero = () => {
 	const Counter = ({ title, count, active = false }) => {
 		let classes = 'counter';
@@ -17,11 +19,15 @@ const Hero = () => {
 		return <div className='colleague-icon'></div>;
 	};
 
+	const colleagues = [...new Array(10)];
+
 	return (
 		<div className='hero-container'>
 			<div className='hero-title-container'>
-				<div className='text-blue-950'>
-					<h2 className='text-7xl text-center'>بزرگـتریـن</h2>
+				<div className='text-z-dark-blue'>
+					<h2 className='text-7xl text-center font-extrabold'>
+						بزرگـتریـن
+					</h2>
 					<h6 className='text-3xl text-center'>
 						مرجع اجاره بی واسطه
 						<br />
@@ -55,7 +61,7 @@ const Hero = () => {
 							<button className='btn'>مشاهده همه</button>
 						</div>
 						<div className='colleagues-icon-container'>
-							{[...new Array(10)].map((item, index) => (
+							{colleagues.map((item, index) => (
 								<ColleagueIcon key={index} />
 							))}
 						</div>

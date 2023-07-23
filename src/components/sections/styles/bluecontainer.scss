@@ -1,0 +1,62 @@
+@tailwind components;
+
+@layer components{
+
+    @media screen and (max-width: theme('screens.sm')) {
+        .blue-container{
+            @apply hidden;
+        }
+    }
+
+    @media screen and (min-width: theme('screens.lg')) {
+        .blue-container {
+            @apply w-full mt-[10rem] rounded-t-[5rem] bg-z-blue pb-64;
+    
+            .topbanner {
+                @apply absolute w-1/3 top-0 translate-y-[-50%] bg-red-500 h-[7rem] rounded-xl;
+            }
+    
+            .left {
+                @apply rounded-tr-none right-0 translate-x-[-30%];
+            }
+    
+            .right {
+                @apply rounded-tl-none left-0 translate-x-[30%];
+            }
+        }
+    
+        .content-container {
+            @apply w-10/12 mx-auto mt-[10rem] bg-gradient-to-b from-z-dark-blue to-transparent rounded-t-[4rem] pb-16;
+        }
+    
+        .title {
+            @apply w-1/3 mx-auto translate-y-[-50%] h-24 rounded-xl bg-white;
+            box-shadow: 0 0 10px 2px white;
+        }
+    
+        .carousel-container {
+            @apply w-10/12 mx-auto relative py-10;
+    
+            .left-arrow {
+                @apply m-5 text-6xl p-5 text-white absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full z-10;
+            }
+    
+            .right-arrow {
+                @apply m-5 text-6xl p-5 text-white absolute right-0 top-1/2 -translate-y-1/2 translate-x-full z-10;
+            }
+        }
+    
+        .carousel-item {
+            @apply w-full h-[14rem] rounded-b-[3rem] rounded-t-lg mt-[4rem] bg-white relative shadow-white;
+            box-shadow: 0 0 10px 0 white;
+        }
+    
+        .carousel-img {
+            @apply w-3/4 aspect-square absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-black z-10 rounded-2xl;
+        }
+    
+        .carousel-data {
+            @apply absolute w-full px-4 bottom-0 right-0 h-1/2 flex flex-col items-center justify-around;
+        }
+    }
+}

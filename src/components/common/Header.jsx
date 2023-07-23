@@ -1,6 +1,28 @@
+import './styles/header.scss';
 import Logo from '../../resources/img/logo.png';
+import { useState, useLayoutEffect } from 'react';
+import { FaBars } from 'react-icons/fa6';
+import { animated, useSpring } from '@react-spring/web';
+import useMeasure from 'react-use-measure';
 
 const Header = () => {
+	const [navClosed, setNavClosed] = useState(true);
+	const [menuRef, { height }] = useMeasure();
+	const collapsibleStyle = useSpring({
+		from: { height: 0 },
+		to: { height: navClosed ? 0 : height },
+	});
+
+	useLayoutEffect(() => {
+		const setMenuChange = () => {
+			if (window.innerWidth > 470) setNavClosed(false);
+			else setNavClosed(true);
+		};
+		window.addEventListener('resize', setMenuChange);
+		setMenuChange();
+		return () => window.removeEventListener('resize', setMenuChange);
+	}, []);
+
 	const menuItems = [
 		'بیلبورد ها',
 		'وبلاگ',
@@ -12,26 +34,31 @@ const Header = () => {
 	];
 
 	const MenuItem = ({ title }) => (
-		<li className='ps-16 text-2xl'>
+		<li className='menu-item'>
 			<a
 				href='#'
-				className='hover:text-cyan-500 text-cyan-800 transition-all duration-300'>
+				className='nav-link'>
 				{title}
 			</a>
 		</li>
 	);
 
 	return (
-		<div className='bg-white w-full shadow-header'>
-			<div className='container mx-auto flex align-middle justify-between'>
-				<div className='basis-3/12 flex items-center'>
+		<div className='header-container'>
+			<div className='header-items'>
+				<div className='logo'>
 					<img
 						src={Logo}
 						className='w-36'
 					/>
+					<button
+						className='menu-controll'
+						onClick={() => setNavClosed(!navClosed)}>
+						<FaBars />
+					</button>
 				</div>
-				<div className='basis-9/12 flex justify-end'>
-					<ul className='flex flex-row items-center'>
+				<div className='desktop-menu'>
+					<ul className='menu'>
 						{menuItems.map((item, index) => (
 							<MenuItem
 								title={item}
@@ -39,6 +66,24 @@ const Header = () => {
 							/>
 						))}
 					</ul>
+				</div>
+				<div className='mobile-menu'>
+					<animated.div
+						style={{
+							...collapsibleStyle,
+							overflow: 'hidden',
+						}}>
+						<ul
+							className='menu'
+							ref={menuRef}>
+							{menuItems.map((item, index) => (
+								<MenuItem
+									title={item}
+									key={index}
+								/>
+							))}
+						</ul>
+					</animated.div>
 				</div>
 			</div>
 		</div>
