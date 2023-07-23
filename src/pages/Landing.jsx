@@ -1,5 +1,6 @@
-import { Header, Footer } from '../components/common';
 import {
+	Header,
+	Footer,
 	BillboardSearch,
 	Hero,
 	ChosenCities,
@@ -14,7 +15,7 @@ const Landing = () => {
 			<BillboardSearch />
 			<ChosenCities />
 			<BillboardInfo />
-			<div className='h-[1000px] w-full'></div>
+			<div className='h-[100rem] w-full'></div>
 			<Footer />
 		</>
 	);

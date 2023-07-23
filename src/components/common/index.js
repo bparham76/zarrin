@@ -1,4 +1,3 @@
-import Header from "./Header";
-import Footer from "./Footer";
+import BillboardSliderItem from "./BillboardSliderItem";
 
-export { Header, Footer };
+export { BillboardSliderItem };

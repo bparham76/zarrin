@@ -2,7 +2,7 @@ import './styles/chosencities.scss';
 // import 'slick-carousel/slick/slick.css';
 // import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 
@@ -26,10 +26,17 @@ const ChosenCities = () => {
 	);
 
 	const CarouselItem = ({ title }) => {
+		const [hover, isHover] = useState(false);
 		return (
-			<div className='mx-4 py-4'>
+			<div
+				className='mx-3 py-4'
+				onMouseEnter={(e) => isHover(true)}
+				onMouseLeave={(e) => isHover(false)}>
 				<div className='carousel-item'>
-					<div className='carousel-img'></div>
+					<div
+						className={
+							'carousel-img' + (hover ? ' hover' : '')
+						}></div>
 					<div className='carousel-data'>
 						<div className='flex gap-2'>
 							<p>{title}</p>

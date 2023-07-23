@@ -47,12 +47,15 @@
             }
         
             .carousel-item {
-                @apply w-full h-[14rem] rounded-b-[3rem] rounded-t-lg mt-[4rem] bg-white relative shadow-white;
+                @apply w-full cursor-pointer h-[14rem] rounded-b-[3rem] rounded-t-lg mt-[4rem] bg-white relative shadow-white;
                 box-shadow: 0 0 10px 0 white;
             }
         
             .carousel-img {
-                @apply w-3/4 aspect-square absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-black z-10 rounded-2xl;
+                @apply w-3/4 aspect-square transition-colors absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-black z-10 rounded-2xl;
+            }
+            .carousel-img.hover{
+                @apply bg-slate-800;
             }
         
             .carousel-data {

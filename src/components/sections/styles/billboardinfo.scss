@@ -20,24 +20,14 @@
                     @apply bg-z-light-blue;
                 }
             }
-
-            .carousel-item{
-                @apply w-full h-[12rem] p-2;
-                
-                .carousel-content {
-                    @apply w-full h-full m-0 p-0 bg-white rounded-xl overflow-hidden flex flex-col text-center;
-
-                    box-shadow: 0 0 3px 3px rgba(0,0,0,0.2);
-                    .img {
-                        @apply w-full bg-black basis-3/5;
-                    }
-                    .info{
-                        @apply mx-2 p-1 border rounded-md border-gray-400;
-                    }
-                }
+            
+            .carousel-control-left {
+                @apply absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full text-xl text-white bg-z-blue p-4 -mx-2 rounded-xl z-50;
             }
             
-            
+            .carousel-control-right {
+                @apply absolute right-0 top-1/2 -translate-y-1/2 translate-x-full text-xl text-white bg-z-blue p-4 -mx-2 rounded-xl z-50;
+            }
         }
     }
 }
