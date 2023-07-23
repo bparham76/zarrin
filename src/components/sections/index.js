@@ -1,5 +1,6 @@
 import Hero from "./Hero";
 import BillboardSearch from "./BillboardSearch";
-import BlueContainer from "./BlueContainer";
+import ChosenCities from "./ChosenCities";
+import BillboardInfo from "./BillboardInfo";
 
-export { Hero, BillboardSearch, BlueContainer };
+export { Hero, BillboardSearch, ChosenCities, BillboardInfo};
