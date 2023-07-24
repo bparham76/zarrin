@@ -20,8 +20,6 @@
                     }
                 }
 
-                
-
                 .btn-container{
                     @apply w-full flex justify-end;
 
@@ -30,7 +28,7 @@
                         &:hover {
                             @apply bg-z-dark-blue text-white;
                         }
-                    
+                        
                         &:active {
                             @apply scale-105;
                         }
@@ -39,12 +37,24 @@
                 }
             }
             
-            .carousel-control-left {
-                @apply absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full text-xl text-white bg-z-blue p-4 -mx-2 rounded-xl z-50;
-            }
-            
-            .carousel-control-right {
-                @apply absolute right-0 top-1/2 -translate-y-1/2 translate-x-full text-xl text-white bg-z-blue p-4 -mx-2 rounded-xl z-50;
+            .carousel-control {
+                @apply absolute top-1/2 transition-all -translate-y-1/2 text-xl text-white bg-z-blue p-4 -mx-2 rounded-xl z-50;
+
+                &.left{
+                    @apply left-0 -translate-x-full;
+                }
+                
+                &.right {
+                    @apply right-0 translate-x-full;
+                }
+
+                &:hover {
+                    @apply bg-z-dark-blue;
+                }
+
+                &:active{
+                    @apply scale-105;
+                }
             }
 
             &.higher {

@@ -4,7 +4,7 @@
     @media screen{
         .header-container{
             @apply bg-white w-full;
-            box-shadow: 0 1px 3px 0 cyan;
+            box-shadow: 0 10px 30px 30px black;
 
             .header-items{
                 @apply flex flex-col justify-between;
@@ -34,6 +34,7 @@
 
     @media screen and (min-width: theme('screens.sm')) {
         .header-container {
+            box-shadow: 0 1px 3px 0 cyan;
             .header-items {
                 @apply container mx-auto flex-row items-center;
                 .logo{
@@ -65,5 +66,6 @@
                 @apply hover:text-z-dark-blue text-z-blue transition-all duration-300;
             }
         }
-    }    
+    }
+    
 }

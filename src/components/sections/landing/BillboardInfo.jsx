@@ -23,14 +23,14 @@ const BillboardInfo = () => {
 
 	const LeftArrow = ({ sliderRef }) => (
 		<button
-			className='carousel-control-left'
+			className='carousel-control left'
 			onClick={(e) => sliderRef?.current?.slickNext()}>
 			<FaChevronLeft />
 		</button>
 	);
 	const RightArrow = ({ sliderRef }) => (
 		<button
-			className='carousel-control-right'
+			className='carousel-control right'
 			onClick={(e) => sliderRef?.current?.slickPrev()}>
 			<FaChevronRight />
 		</button>

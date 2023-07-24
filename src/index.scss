@@ -7,17 +7,6 @@ body{
     font-weight: bold;
 }
 
-@layer components {
-    .billboardselect {
-        @apply bg-white rounded-2xl p-2 flex items-center;
-        
-        .text {
-            @apply text-2xl w-[12rem] focus:outline-none;
-        }
-    }
-}
-
 @import './resources/font/stylesheet.css';
-
 @import 'slick-carousel/slick/slick.css';
 @import 'slick-carousel/slick/slick-theme.css';

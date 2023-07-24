@@ -51,12 +51,25 @@
                     &.chips {
                         @apply flex-wrap;
                     }
-                }
 
-                
+                    &.col{
+                        @apply flex-col justify-around;
+                    }
 
-                .chip{
-                    @apply bg-z-gray text-white rounded-full text-center w-1/4;
+                    .chip {
+                        @apply p-1 text-center w-1/4 cursor-pointer;
+                        p{
+                            @apply bg-z-gray text-white rounded-md;
+                        }
+                    }
+
+                    .badge{
+                        @apply w-1/4 aspect-square rounded-lg bg-white shadow-md shadow-gray-400;
+                    }
+
+                    .banner{
+                        @apply w-full bg-red-800 rounded-lg h-1/3;
+                    }
                 }
             }
         }

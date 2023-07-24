@@ -1,11 +1,12 @@
+import '../styles/billboardsearch.scss';
 import { FaChevronDown } from 'react-icons/fa6';
+import { BiSearch } from 'react-icons/bi';
 
 const BillboardSearch = () => {
 	const SearchInput = ({ title = '' }) => {
 		return (
-			<div className='billboardselect'>
+			<div className='select'>
 				<input
-					className='text'
 					type='text'
 					name=''
 					id=''
@@ -17,17 +18,16 @@ const BillboardSearch = () => {
 	};
 
 	return (
-		<div className='w-full px-[4rem] my-[2rem]'>
-			<h2 className='text-z-dark-blue text-3xl mb-4 ms-8'>
-				جستجوی بیلبورد:
-			</h2>
-			<div className='w-full bg-z-cyan-0 rounded-3xl p-4 flex justify-between gap-1 h-[6rem]'>
+		<div className='billboardsearch'>
+			<h2>جستجوی بیلبورد:</h2>
+			<div className='container'>
 				<SearchInput title='استان' />
 				<SearchInput title='شهر' />
 				<SearchInput title='نوع سازه' />
 				<SearchInput title='وضعیت اکران' />
-				<button className='bg-z-dark-blue text-white px-4 w-[12rem] text-2xl rounded-2xl'>
-					جستجو
+				<button>
+					<p>جستجو</p>
+					<BiSearch className='icon' />
 				</button>
 			</div>
 		</div>

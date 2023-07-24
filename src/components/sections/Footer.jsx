@@ -6,7 +6,11 @@ import { LiaMapMarkedAltSolid } from 'react-icons/lia';
 
 const Footer = () => {
 	const Chip = () => {
-		return <div className='chip'>نوشته</div>;
+		return (
+			<div className='chip'>
+				<p>برچسب</p>
+			</div>
+		);
 	};
 	return (
 		<div className='footer'>
@@ -59,8 +63,15 @@ const Footer = () => {
 								<Chip key={index} />
 							))}
 						</div>
-						<div className='part'>salam</div>
-						<div className='part'>salam</div>
+						<div className='part'>
+							<div className='badge'></div>
+							<div className='badge'></div>
+							<div className='badge'></div>
+						</div>
+						<div className='part col'>
+							<div className='banner'></div>
+							<div className='banner'></div>
+						</div>
 					</div>
 				</div>
 			</div>

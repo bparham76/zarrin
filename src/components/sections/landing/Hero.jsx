@@ -24,17 +24,11 @@ const Hero = () => {
 	return (
 		<div className='hero-container'>
 			<div className='hero-title-container'>
-				<div className='text-z-dark-blue'>
-					<h2 className='text-7xl text-center font-extrabold'>
-						بزرگـتریـن
-					</h2>
-					<h6 className='text-3xl text-center'>
-						مرجع اجاره بی واسطه
-						<br />
-						بیلبورد در شمال کشور
-					</h6>
+				<div className='title'>
+					<h2>بزرگـتریـن</h2>
+					<h6>مرجع اجاره بی واسطه بیلبورد در شمال کشور</h6>
 				</div>
-				<div className='flex flex-col gap-10'>
+				<div className='counters'>
 					<Counter
 						title={'تعداد بیلبورد های قابل رزرو'}
 						count={478}
@@ -52,13 +46,14 @@ const Hero = () => {
 			</div>
 			<div className='hero-app-container'>
 				<div className='hero-app-canvas'>
+					<div className='hero-app'></div>
 					<div className='hero-colleagues'>
 						<div className='hero-colleagues-title'>
-							<p className='text-gray-400 text-xl'>
+							<p>
 								برند هایی که در این هفده سال افتخار همکاری با
 								آنها را داشتیم:
 							</p>
-							<button className='btn'>مشاهده همه</button>
+							<button>مشاهده همه</button>
 						</div>
 						<div className='colleagues-icon-container'>
 							{colleagues.map((item, index) => (
