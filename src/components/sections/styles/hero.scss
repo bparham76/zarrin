@@ -52,14 +52,13 @@
 
                             .btn {
                                 @apply px-4 text-xl text-white rounded-full bg-gray-400 transition-all;
-                            }
-
-                            .btn:hover{
-                                @apply bg-z-blue;
-                            }
-
-                            .btn:active{
-                                @apply scale-105;
+                                &:hover {
+                                    @apply bg-z-blue;
+                                }
+                            
+                                &:active {
+                                    @apply scale-105;
+                                }
                             }
                         }
 

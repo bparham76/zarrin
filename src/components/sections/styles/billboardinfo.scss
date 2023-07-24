@@ -10,30 +10,32 @@
 
                 .title{
                     @apply w-1/4 text-white h-24 text-center text-3xl p-8 rounded-xl -translate-y-1/2 cursor-default;   
+
+                    &.red {
+                        @apply bg-z-red;
+                    }
+                
+                    &.blue {
+                        @apply bg-z-light-blue;
+                    }
                 }
 
-                .title.red {
-                    @apply bg-z-red;
-                }
-
-                .title.blue {
-                    @apply bg-z-light-blue;
-                }
+                
 
                 .btn-container{
                     @apply w-full flex justify-end;
 
                     .btn-more {
                         @apply bg-z-cyan-0 transition-all text-z-dark-blue text-base rounded-lg px-6 p-1 flex items-center gap-2 translate-y-1/2 me-2;
+                        &:hover {
+                            @apply bg-z-dark-blue text-white;
+                        }
+                    
+                        &:active {
+                            @apply scale-105;
+                        }
                     }
                     
-                    .btn-more:hover {
-                        @apply bg-z-dark-blue text-white;
-                    }
-                    
-                    .btn-more:active {
-                        @apply scale-105;
-                    }
                 }
             }
             
@@ -44,14 +46,14 @@
             .carousel-control-right {
                 @apply absolute right-0 top-1/2 -translate-y-1/2 translate-x-full text-xl text-white bg-z-blue p-4 -mx-2 rounded-xl z-50;
             }
-        }
 
-        .billboard-section.higher{
-            @apply h-96;
-        }
+            &.higher {
+                @apply h-96;
+            }
 
-        .billboard-section.high {
-            @apply h-80;
+            &.high {
+                @apply h-80;
+            }
         }
     }
 }

@@ -25,10 +25,6 @@
                     @apply p-2 text-2xl;
                 }
 
-                // .mobile-menu {
-                //     @apply bg-red-500;
-                // }
-
                 .desktop-menu {
                     @apply hidden;
                 }
@@ -69,7 +65,5 @@
                 @apply hover:text-z-dark-blue text-z-blue transition-all duration-300;
             }
         }
-    }
-
-    
+    }    
 }

@@ -24,7 +24,6 @@
                 @apply rounded-tl-none left-0 translate-x-[30%];
             }
         
-    
             .content-container {
                 @apply w-10/12 mx-auto mt-[10rem] bg-gradient-to-b from-z-dark-blue to-transparent rounded-t-[4rem] pb-16;
             }
@@ -53,11 +52,12 @@
         
             .carousel-img {
                 @apply w-3/4 aspect-square transition-colors absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-black z-10 rounded-2xl;
+
+                &.hover {
+                    @apply bg-slate-800;
+                }
             }
-            .carousel-img.hover{
-                @apply bg-slate-800;
-            }
-        
+            
             .carousel-data {
                 @apply absolute w-full px-4 bottom-0 right-0 h-1/2 flex flex-col items-center justify-around;
             }

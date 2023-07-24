@@ -43,14 +43,15 @@
                                     @apply text-white opacity-50 w-2/3 h-2/3;
                                 }
                             }
-                        }
-
-                        .entery:hover{
-                            @apply bg-z-light-blue;
-                            box-shadow: 0 0 5px 0 darkslategray;
-                        }
-                        .entery:active{
-                            @apply scale-105;
+                            
+                            &:hover {
+                                @apply bg-z-cyan-0;
+                                box-shadow: 0 0 5px 0 darkslategray;
+                            }
+                            
+                            &:active {
+                                @apply scale-105;
+                            }
                         }
                     }
 
@@ -58,7 +59,7 @@
                         @apply bg-white basis-2/3 rounded-xl flex flex-col;
 
                         .info{
-                            @apply basis-2/3 bg-z-light-blue rounded-xl flex p-4;
+                            @apply basis-2/3 bg-z-cyan-0 rounded-xl flex p-4;
                             .caption{
                                 @apply basis-7/12 text-z-dark-blue p-2 flex flex-col justify-start relative;
 
@@ -78,15 +79,13 @@
                                     @apply flex gap-4 bottom-0 right-2 absolute;
 
                                     .btn{
-                                        @apply bg-white rounded-lg p-2 text-black;
-                                    }
-
-                                    .btn.play{
-                                        @apply p-0 px-2 pt-2 flex cursor-default;
-                                    }
-
-                                    .btn.red{
-                                        @apply text-red-600;
+                                        @apply bg-white rounded-lg p-2 text-black;&.play {
+                                            @apply p-0 px-2 pt-2 flex cursor-default;
+                                        }
+                                    
+                                        &.red {
+                                            @apply text-red-600;
+                                        }
                                     }
                                 }
                             }
