@@ -1,6 +1,49 @@
 @tailwind components;
 
 @layer components{
+    @media screen and (max-width: theme('screens.sm')) {
+        .blog-container {
+            @apply w-full mt-4;
+
+            .items-container {
+                @apply w-full p-4 bg-gradient-to-b from-z-blue to-transparent rounded-t-[2rem] flex flex-col items-center;
+
+                .title {
+                    @apply w-full py-8 text-white flex items-center justify-center;
+
+                    .heading {
+                        @apply text-4xl;
+                    }
+                }
+
+                button {
+                    @apply bg-z-cyan-0 text-z-dark-blue text-sm rounded-2xl p-2 px-4;
+                }
+            }
+
+            .entery {
+                @apply w-full p-0 mb-4 bg-white rounded-md h-52 overflow-hidden flex flex-col;
+                box-shadow: 0 0 10px 0 gray;
+
+                .context {
+                    @apply w-full h-1/2 p-2 order-2;
+
+                    h4 {
+                        @apply text-2xl font-bold text-z-dark-blue;
+                    }
+
+                    p {
+                        @apply text-lg font-normal text-z-dark-blue;
+                    }
+                }
+
+                .img {
+                    @apply w-full h-1/2 bg-black transition-colors rounded-md order-1;
+                }
+            }
+        }
+    }
+    
     @media screen and (min-width: theme('screens.lg')){
         .blog-container{
             @apply w-full bg-z-light-blue;
@@ -36,6 +79,7 @@
 
                 .context{
                     @apply basis-2/3 m-4 ps-8;
+
                     h4{
                         @apply text-4xl font-bold text-z-dark-blue;
                     }
@@ -46,6 +90,7 @@
 
                 .img{
                     @apply basis-1/3 bg-black transition-colors;
+
                     &.hover {
                         @apply bg-slate-800;
                     }
