@@ -1,25 +1,16 @@
 import '../styles/billboardinfo.scss';
 import Slider from 'react-slick';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
-import { useRef, useLayoutEffect, useState } from 'react';
+import { useRef } from 'react';
 
 import { BillboardSliderItem } from '../../common';
+import { useMobileScreen } from '../../../hooks';
 
 const BillboardInfo = () => {
 	const offeredSliderRed = useRef();
 	const popularSliderRef = useRef();
 
-	const [mobile, isMobile] = useState(false);
-
-	useLayoutEffect(() => {
-		const detectMobile = () => {
-			if (window.innerWidth > 470) isMobile(false);
-			else isMobile(true);
-		};
-		window.addEventListener('resize', detectMobile);
-		detectMobile();
-		return () => window.removeEventListener('resize', detectMobile);
-	}, []);
+	const mobile = useMobileScreen();
 
 	const LeftArrow = ({ sliderRef }) => (
 		<button
@@ -41,7 +32,7 @@ const BillboardInfo = () => {
 			<div className='billboard-section higher'>
 				<div className='data'>
 					<div className='title red'>بیلبورد های تخفیف دار</div>
-					<div className='w-3/4 pb-4 relative'>
+					<div className='carousel-container'>
 						<LeftArrow sliderRef={offeredSliderRed} />
 						<RightArrow sliderRef={offeredSliderRed} />
 						<Slider
@@ -49,6 +40,7 @@ const BillboardInfo = () => {
 							arrows={false}
 							slidesToShow={mobile ? 1 : 4}
 							slidesToScroll={1}
+							centerMode={mobile}
 							rtl>
 							{[...new Array(10)].map((item, index) => (
 								<BillboardSliderItem
@@ -61,7 +53,7 @@ const BillboardInfo = () => {
 							))}
 						</Slider>
 						<div className='btn-container'>
-							<button className='btn-more'>
+							<button>
 								مشاهده بیشتر <FaChevronLeft />
 							</button>
 						</div>
@@ -71,7 +63,7 @@ const BillboardInfo = () => {
 			<div className='billboard-section high'>
 				<div className='data'>
 					<div className='title blue'>بیلبورد های پر بازدید</div>
-					<div className='w-3/4 mx-auto relative'>
+					<div className='carousel-container'>
 						<LeftArrow sliderRef={popularSliderRef} />
 						<RightArrow sliderRef={popularSliderRef} />
 						<Slider
@@ -79,6 +71,7 @@ const BillboardInfo = () => {
 							arrows={false}
 							slidesToShow={mobile ? 1 : 4}
 							slidesToScroll={1}
+							centerMode={mobile}
 							rtl>
 							{[...new Array(10)].map((item, index) => (
 								<BillboardSliderItem
@@ -90,7 +83,7 @@ const BillboardInfo = () => {
 							))}
 						</Slider>
 						<div className='btn-container'>
-							<button className='btn-more'>
+							<button>
 								مشاهده بیشتر <FaChevronLeft />
 							</button>
 						</div>

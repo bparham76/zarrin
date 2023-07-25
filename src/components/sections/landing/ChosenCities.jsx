@@ -4,12 +4,15 @@ import { useRef, useState } from 'react';
 
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 
+import { useMobileScreen } from '../../../hooks';
+
 const ChosenCities = () => {
 	const sliderRef = useRef();
+	const mobile = useMobileScreen();
 
 	const LeftArrow = () => (
 		<button
-			className='left-arrow'
+			className='left arrow'
 			onClick={(e) => sliderRef?.current?.slickNext()}>
 			<FaChevronLeft />
 		</button>
@@ -17,7 +20,7 @@ const ChosenCities = () => {
 
 	const RightArrow = () => (
 		<button
-			className='right-arrow'
+			className='right arrow'
 			onClick={(e) => sliderRef?.current?.slickPrev()}>
 			<FaChevronRight />
 		</button>
@@ -27,15 +30,12 @@ const ChosenCities = () => {
 		const [hover, isHover] = useState(false);
 		return (
 			<div
-				className='mx-3 py-4'
+				className='bounds'
 				onMouseEnter={(e) => isHover(true)}
 				onMouseLeave={(e) => isHover(false)}>
 				<div className='carousel-item'>
-					<div
-						className={
-							'carousel-img' + (hover ? ' hover' : '')
-						}></div>
-					<div className='carousel-data'>
+					<div className={'img' + (hover ? ' hover' : '')}></div>
+					<div className='data'>
 						<div className='flex gap-2'>
 							<p>{title}</p>
 							<p>{title}</p>
@@ -49,13 +49,13 @@ const ChosenCities = () => {
 
 	return (
 		<div className='blue-container'>
-			<div className='w-4/5 mx-auto flex flex-row relative'>
+			<div className='banner-container'>
 				<div className='topbanner left'></div>
 				<div className='topbanner right'></div>
 			</div>
 			<div className='content-container'>
-				<div className='title flex items-center justify-center'>
-					<h2 className='text-5xl text-z-dark-blue'>شهرهای منتخب</h2>
+				<div className='title'>
+					<h2>شهرهای منتخب</h2>
 				</div>
 				<div className='carousel-container'>
 					<Slider
@@ -63,7 +63,9 @@ const ChosenCities = () => {
 						arrows={false}
 						rtl
 						slidesToScroll={1}
-						slidesToShow={4}
+						slidesToShow={mobile ? 2 : 4}
+						swipe
+						centerMode={mobile}
 						speed={500}>
 						{[...new Array(12)].map((item, index) => (
 							<CarouselItem

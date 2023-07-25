@@ -3,8 +3,59 @@
 @layer components{
 
     @media screen and (max-width: theme('screens.sm')) {
-        .blue-container{
-            @apply hidden;
+        .blue-container {
+            @apply w-full;
+    
+            .banner-container{
+                @apply w-full flex gap-2 px-4;
+                .topbanner {
+                    @apply w-1/2 top-0 bg-red-500 h-[5rem] rounded-xl;
+                    &.left {
+                        @apply rounded-tr-none;
+                    }
+                
+                    &.right {
+                        @apply rounded-tl-none;
+                    }
+                }
+            }
+    
+            .content-container {
+                @apply w-full rounded-t-[2rem] pb-16 bg-z-dark-blue pt-8 mt-6;
+
+                .title {
+                    @apply w-full flex items-center justify-center;
+            
+                    h2 {
+                        @apply text-5xl text-white;
+                    }
+                }
+            }
+    
+            .carousel-container {
+                @apply w-full;
+    
+                .arrow{
+                    @apply hidden;
+                }
+
+                .bounds {
+                    @apply mx-1 py-4;
+                }
+
+                .carousel-item {
+                    @apply w-full cursor-pointer h-[10rem] rounded-b-[2rem] rounded-t-lg mt-[4rem] bg-white relative shadow-white;
+                    box-shadow: 0 0 10px 0 white;
+
+                    .img {
+                        @apply w-3/4 aspect-square transition-colors absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-black z-10 rounded-2xl;
+                    }
+                
+                    .data {
+                        @apply absolute w-full px-2 bottom-0 right-0 h-1/2 flex flex-col items-center justify-around;
+                    }
+                }
+            }
         }
     }
 
@@ -12,54 +63,70 @@
         .blue-container {
             @apply w-full mt-[10rem] rounded-t-[5rem] bg-z-blue pb-24;
     
-            .topbanner {
-                @apply absolute w-1/3 top-0 translate-y-[-50%] bg-red-500 h-[7rem] rounded-xl;
-            }
-    
-            .left {
-                @apply rounded-tr-none right-0 translate-x-[-30%];
-            }
-    
-            .right {
-                @apply rounded-tl-none left-0 translate-x-[30%];
+            .banner-container{
+                @apply w-4/5 mx-auto flex flex-row relative;
+
+                .topbanner {
+                    @apply absolute w-1/3 top-0 translate-y-[-50%] bg-red-500 h-[7rem] rounded-xl;
+            
+                    &.left {
+                        @apply rounded-tr-none right-0 translate-x-[-30%];
+                    }
+            
+                    &.right {
+                        @apply rounded-tl-none left-0 translate-x-[30%];
+                    }
+                }
             }
         
             .content-container {
                 @apply w-10/12 mx-auto mt-[10rem] bg-gradient-to-b from-z-dark-blue to-transparent rounded-t-[4rem] pb-16;
+                
+                .title {
+                    @apply w-1/3 mx-auto translate-y-[-50%] h-24 rounded-xl bg-white cursor-default flex items-center justify-center;
+                    box-shadow: 0 0 10px 2px white;
+
+                    h2{
+                        @apply text-5xl text-z-dark-blue;
+                    }
+                }
             }
         
-            .title {
-                @apply w-1/3 mx-auto translate-y-[-50%] h-24 rounded-xl bg-white cursor-default;
-                box-shadow: 0 0 10px 2px white;
+            .bounds{
+                @apply mx-3 py-4;
             }
-        
+
             .carousel-container {
                 @apply w-10/12 mx-auto relative py-10;
         
-                .left-arrow {
-                    @apply m-5 text-6xl p-5 text-white absolute left-0 top-1/2 -translate-y-1/2 -translate-x-full z-10;
-                }
-        
-                .right-arrow {
-                    @apply m-5 text-6xl p-5 text-white absolute right-0 top-1/2 -translate-y-1/2 translate-x-full z-10;
+                .arrow {
+                    @apply m-5 text-6xl p-5 text-white absolute top-1/2 -translate-y-1/2 z-10;
+
+                    &.left {
+                        @apply left-0 -translate-x-full;
+                    }
+                
+                    &.right {
+                        @apply right-0 translate-x-full;
+                    }
                 }
             }
         
             .carousel-item {
                 @apply w-full cursor-pointer h-[14rem] rounded-b-[3rem] rounded-t-lg mt-[4rem] bg-white relative shadow-white;
                 box-shadow: 0 0 10px 0 white;
-            }
-        
-            .carousel-img {
-                @apply w-3/4 aspect-square transition-colors absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-black z-10 rounded-2xl;
 
-                &.hover {
-                    @apply bg-slate-800;
-                }
-            }
+                .img {
+                    @apply w-3/4 aspect-square transition-colors absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 bg-black z-10 rounded-2xl;
             
-            .carousel-data {
-                @apply absolute w-full px-4 bottom-0 right-0 h-1/2 flex flex-col items-center justify-around;
+                    &.hover {
+                        @apply bg-slate-800;
+                    }
+                }
+            
+                .data {
+                    @apply absolute w-full px-4 bottom-0 right-0 h-1/2 flex flex-col items-center justify-around;
+                }
             }
         }
     }

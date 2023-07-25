@@ -38,7 +38,7 @@
                         @apply w-full;
 
                         .hero-colleagues-title{
-                            @apply w-full bg-white rounded-t-[2rem] flex justify-around items-center pt-4 px-4;
+                            @apply w-full bg-white rounded-t-[2rem] flex justify-around items-center p-4 pb-0;
 
                             p{
                                 @apply text-sm text-z-gray;
@@ -57,7 +57,7 @@
                             @apply w-full flex flex-row items-center justify-center p-4 gap-1 bg-white;
 
                             .colleague-icon{
-                                @apply w-16 aspect-square bg-z-gray rounded-full;
+                                @apply w-16 aspect-square bg-z-gray rounded-full shadow-gray-400 shadow-md;
                             }
                         }
                     }
