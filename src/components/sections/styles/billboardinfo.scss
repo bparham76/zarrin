@@ -12,8 +12,13 @@
                     @apply w-full py-4;
                 }
 
-                .title {
-                    @apply text-white text-center text-lg p-2 rounded-lg;
+                .title{
+                    @apply hidden;
+                }
+
+                .title-m {
+                    @apply text-white text-center text-lg rounded-lg flex gap-2 ps-2 items-center;
+                    box-shadow: 0 0 5px 0 gray;
 
                     &.red {
                         @apply bg-z-red;
@@ -21,6 +26,14 @@
 
                     &.blue {
                         @apply bg-z-light-blue;
+                    }
+
+                    p{}
+
+                    .icon{}
+
+                    button{
+                        @apply p-2 rounded-lg bg-white text-z-dark-blue text-sm;
                     }
                 }
 
@@ -62,6 +75,10 @@
                     &.blue {
                         @apply bg-z-light-blue;
                     }
+                }
+
+                .title-m{
+                    @apply hidden;
                 }
 
                 .btn-container{

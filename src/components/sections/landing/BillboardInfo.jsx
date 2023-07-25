@@ -1,6 +1,8 @@
 import '../styles/billboardinfo.scss';
 import Slider from 'react-slick';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
+import { GoVerified } from 'react-icons/go';
+import { MdPercent } from 'react-icons/md';
 import { useRef } from 'react';
 
 import { BillboardSliderItem } from '../../common';
@@ -32,6 +34,13 @@ const BillboardInfo = () => {
 			<div className='billboard-section higher'>
 				<div className='data'>
 					<div className='title red'>بیلبورد های تخفیف دار</div>
+					<div className='title-m red'>
+						<div className='icon'>
+							<MdPercent />
+						</div>
+						<p>تخفیف دار ها</p>
+						<button>مشاهده همه</button>
+					</div>
 					<div className='carousel-container'>
 						<LeftArrow sliderRef={offeredSliderRed} />
 						<RightArrow sliderRef={offeredSliderRed} />
@@ -63,6 +72,13 @@ const BillboardInfo = () => {
 			<div className='billboard-section high'>
 				<div className='data'>
 					<div className='title blue'>بیلبورد های پر بازدید</div>
+					<div className='title-m blue'>
+						<div className='icon'>
+							<GoVerified />
+						</div>
+						<p>پربازدیدها</p>
+						<button>مشاهده همه</button>
+					</div>
 					<div className='carousel-container'>
 						<LeftArrow sliderRef={popularSliderRef} />
 						<RightArrow sliderRef={popularSliderRef} />
