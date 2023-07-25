@@ -3,17 +3,23 @@ import { HiOutlinePlay } from 'react-icons/hi';
 import { RiAccountCircleLine } from 'react-icons/ri';
 import { AiFillHeart } from 'react-icons/ai';
 import { BsShare, BsPlay } from 'react-icons/bs';
+import Slider from 'react-slick';
+import { useMobileScreen } from '../../../hooks';
 
 const PodcastEnteries = () => {
+	const mobile = useMobileScreen();
+
 	const PodcastEntery = () => {
 		return (
-			<div className='entery'>
-				<div className='caption'>
-					<h4>عنوان پادکست</h4>
-					<p>نام گوینده</p>
-				</div>
-				<div className='img'>
-					<HiOutlinePlay className='play-icon' />
+			<div className='space'>
+				<div className='entery'>
+					<div className='caption'>
+						<h4>عنوان پادکست</h4>
+						<p>نام گوینده</p>
+					</div>
+					<div className='img'>
+						<HiOutlinePlay className='play-icon' />
+					</div>
 				</div>
 			</div>
 		);
@@ -23,13 +29,22 @@ const PodcastEnteries = () => {
 		<div className='podcast-container'>
 			<div className='items-container'>
 				<div className='title'>
-					<p className='heading'>پادکست ها</p>
+					<p>پادکست ها</p>
 				</div>
 				<div className='sections'>
 					<div className='list'>
-						{[...new Array(4)].map((item, index) => (
-							<PodcastEntery />
-						))}
+						<Slider
+							verticalSwiping={!mobile}
+							vertical={!mobile}
+							slidesToScroll={1}
+							slidesPerRow={mobile ? 1 : 4}
+							arrows={false}
+							centerMode
+							dots={false}>
+							{[...new Array(10)].map((item, index) => (
+								<PodcastEntery key={index} />
+							))}
+						</Slider>
 					</div>
 					<div className='canvas'>
 						<div className='info'>
