@@ -1,6 +1,6 @@
 import {
 	Header,
-	Footer,
+	FooterLanding,
 	BillboardSearch,
 	Hero,
 	ChosenCities,
@@ -19,7 +19,7 @@ const Landing = () => {
 			<BillboardInfo />
 			<BlogEnteries />
 			<PodcastEnteries />
-			<Footer />
+			<FooterLanding />
 		</>
 	);
 };

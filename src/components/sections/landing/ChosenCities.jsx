@@ -65,6 +65,7 @@ const ChosenCities = () => {
 						slidesToScroll={1}
 						slidesToShow={mobile ? 2 : 4}
 						swipe
+						draggable
 						centerMode={mobile}
 						speed={500}>
 						{[...new Array(12)].map((item, index) => (

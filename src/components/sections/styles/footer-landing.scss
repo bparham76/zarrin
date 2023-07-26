@@ -1,0 +1,98 @@
+@tailwind components;
+
+@layer components{
+    @media screen and (min-width: theme('screens.lg')) {
+        .footer{
+            @apply w-full pt-[12rem] pb-[1rem];
+
+            .top {
+                @apply w-full px-[6rem] flex gap-4 justify-center bg-z-dark-blue rounded-t-[4rem];
+                
+                .image {
+                    @apply basis-1/4 relative;
+
+                    img{
+                        @apply absolute w-full h-auto bottom-0 right-0;
+                        filter: drop-shadow(0 0 3px black);
+                    }
+                }
+            
+                .description {
+                    @apply basis-3/4 text-white;
+                    
+                    h4{
+                        @apply font-extrabold text-7xl text-z-dark-blue;
+                    }
+                    p{
+                        @apply pb-[7rem] pt-5 font-normal text-xl;
+                    }
+                    &>*{
+                        @apply -translate-y-[5rem];
+                    }
+                }
+            }
+            
+            .bottom {
+                @apply w-full bg-z-dark-blue z-0 p-0 relative;
+
+                &::before{
+                    @apply absolute h-full w-full bg-white rounded-t-[4rem] -z-10;
+                    // @apply absolute h-full w-full bg-white bottom-0 left-0 rounded-t-[4rem] -z-10;
+                    content: '';
+                }
+
+                &>div{
+                    @apply grid grid-cols-3 w-full h-full px-[6rem];
+
+                    &>div{
+                        @apply h-24 p-4;
+                    }
+
+                    &>div:nth-of-type(1),
+                    &>div:nth-of-type(2),
+                    &>div:nth-of-type(3),{
+                        @apply flex items-center justify-between p-2 text-z-dark-blue;
+
+                        &>div{
+                            @apply flex justify-center gap-2;
+                        }
+                    }
+
+                    &>div:nth-of-type(4),
+                    &>div:nth-of-type(5),
+                    &>div:nth-of-type(6){
+                        @apply border-t-2 border-gray-400;
+                    }
+                    
+                    &>div:nth-of-type(2) {
+                        @apply h-3/4 w-full my-auto border-x-2 border-gray-400;
+                    }
+
+                    &>div:nth-of-type(4) {
+                        @apply grid grid-cols-4 gap-1 ps-0;
+
+                        &>div{
+                            @apply bg-z-gray rounded-lg text-center text-white text-sm font-normal;
+                        }
+                    }
+
+                    &>div:nth-of-type(5) {
+                        @apply flex items-center justify-around;
+
+                        &>div{
+                            @apply basis-1/4 aspect-square shadow-z-gray shadow-md bg-white rounded-lg;
+                        }
+                    }
+
+                    &>div:nth-of-type(6){
+                        @apply w-full h-full flex flex-col items-center justify-between p-2;
+
+                        &>div {
+                            @apply w-full h-8 bg-red-500 rounded-lg;
+                        }
+                    }
+                }
+            }
+        }
+    }        
+}

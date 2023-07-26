@@ -15,7 +15,7 @@ const Footer = () => {
 	return (
 		<div className='footer'>
 			<div className='top text-white'>
-				<div className='container flex'>
+				<div className='container up'>
 					<div className='img'>
 						<img src={Zarin} />
 					</div>
@@ -32,27 +32,27 @@ const Footer = () => {
 				</div>
 			</div>
 			<div className='bottom text-z-dark-blue'>
-				<div className='container flex flex-col'>
+				<div className='container down'>
 					<div className='info-top'>
 						<div className='part'>
-							<div className='flex gap-2'>
+							<div>
 								<BsEnvelopeAt className='text-xl' />
-								ایمیل
+								<p>ایمیل</p>
 							</div>
 							<p>info@billboardzarin.com</p>
 						</div>
-						<div className='part border-x-2 border-gray-300'>
-							<div className='flex gap-2'>
+						<div className='part '>
+							<div>
 								<FiPhoneCall className='text-xl' />
-								تلفن
+								<p>تلفن</p>
 							</div>
 							<p>01154224371</p>
 							<p>09118665090</p>
 						</div>
 						<div className='part'>
-							<div className='flex gap-2'>
+							<div>
 								<LiaMapMarkedAltSolid className='text-2xl' />
-								آدرس
+								<p>آدرس</p>
 							</div>
 							<p>تنکابن - خیابان جمهوری - کوچه شبرنگ</p>
 						</div>

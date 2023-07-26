@@ -5,6 +5,6 @@ import BillboardInfo from "./landing/BillboardInfo";
 import BlogEnteries from "./landing/BlogEnteries";
 import PodcastEnteries from "./landing/PodcastEnteries";
 import Header from './Header';
-import Footer from './Footer';
+import FooterLanding from './FooterLanding';
 
-export { Header, Footer, Hero, BillboardSearch, ChosenCities, BillboardInfo, BlogEnteries, PodcastEnteries};
+export { Header, FooterLanding, Hero, BillboardSearch, ChosenCities, BillboardInfo, BlogEnteries, PodcastEnteries};

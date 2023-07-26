@@ -50,6 +50,8 @@ const BillboardInfo = () => {
 							slidesToShow={mobile ? 1 : 4}
 							slidesToScroll={1}
 							centerMode={mobile}
+							swipe
+							draggable
 							rtl>
 							{[...new Array(10)].map((item, index) => (
 								<BillboardSliderItem
@@ -88,6 +90,8 @@ const BillboardInfo = () => {
 							slidesToShow={mobile ? 1 : 4}
 							slidesToScroll={1}
 							centerMode={mobile}
+							swipe
+							draggable
 							rtl>
 							{[...new Array(10)].map((item, index) => (
 								<BillboardSliderItem
