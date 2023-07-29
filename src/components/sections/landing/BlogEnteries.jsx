@@ -1,4 +1,4 @@
-import '../styles/blogenteries.scss';
+import './styles/blogenteries.scss';
 import { useState } from 'react';
 import { FaChevronLeft } from 'react-icons/fa6';
 import { useMobileScreen } from '../../../hooks';

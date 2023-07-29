@@ -1,4 +1,4 @@
-import '../styles/chosencities.scss';
+import './styles/chosencities.scss';
 import Slider from 'react-slick';
 import { useRef, useState } from 'react';
 

@@ -1,4 +1,4 @@
-import '../styles/podcastenteries.scss';
+import './styles/podcastenteries.scss';
 import { HiOutlinePlay } from 'react-icons/hi';
 import { RiAccountCircleLine } from 'react-icons/ri';
 import { AiFillHeart } from 'react-icons/ai';

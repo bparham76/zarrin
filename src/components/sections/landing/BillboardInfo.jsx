@@ -1,4 +1,4 @@
-import '../styles/billboardinfo.scss';
+import './styles/billboardinfo.scss';
 import Slider from 'react-slick';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import { GoVerified } from 'react-icons/go';

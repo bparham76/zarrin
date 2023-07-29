@@ -1,6 +1,92 @@
 @tailwind components;
 
 @layer components{
+    @media screen and (max-width: theme('screens.sm')) {
+            .footer {
+                @apply w-full pt-10;
+
+                .top {
+                    @apply w-full bg-z-dark-blue rounded-t-[2rem] flex;
+
+                    .image {
+                        @apply basis-1/4 px-2 relative;
+
+                        img {
+                            @apply -translate-y-[20%];
+                        }
+                    }
+    
+                    .description {
+                        @apply basis-3/4 text-white px-2 pe-4;
+                        h4 {
+                            @apply text-z-dark-blue -translate-y-full text-2xl font-extrabold;
+                        }
+    
+                        p {
+                            @apply -translate-y-[20%] font-normal text-sm;
+                        }
+                    }
+                }
+    
+                .bottom {
+    
+                    &>div{
+                        @apply w-full m-0 grid gap-0 grid-cols-3 bg-z-dark-blue;
+
+                        &>div{
+                            @apply col-span-1 p-1;
+                        }
+
+                        &>div:nth-of-type(1),
+                        &>div:nth-of-type(2),
+                        &>div:nth-of-type(3){
+                            @apply text-z-dark-blue text-sm font-thin flex flex-col items-center justify-center relative z-0 -translate-y-8;
+                            
+                            &>div>p{
+                                @apply hidden;
+                            }
+
+                            &::before{
+                                @apply absolute bg-white w-full h-full -z-10 p-0;
+                            
+                                content: '';
+                            }
+                        }
+
+                        &>div:nth-of-type(1){
+                            @apply w-[95%] ml-0 mr-auto;
+                            
+                            &::before{
+                                @apply rounded-tr-[1rem] rounded-br-sm ps-2;
+                            }
+                        }
+
+                        &>div:nth-of-type(3){
+                            @apply w-[95%] mr-0 ml-auto;
+                            
+                            &::before {
+                                @apply rounded-tl-[1rem] rounded-bl-sm pe-2;
+                            }
+                        }
+
+                        &>div:nth-of-type(4),
+                        &>div:nth-of-type(5),
+                        &>div:nth-of-type(6) {
+                            @apply bg-white;
+                        }
+
+                        &>div:nth-of-type(4){
+                            @apply grid grid-cols-4;
+
+                            &>div {
+                                @apply bg-z-gray rounded-lg text-center text-white text-sm font-normal;
+                            }
+                        }
+                    }
+                }
+            }    
+        }
+
     @media screen and (min-width: theme('screens.lg')) {
         .footer{
             @apply w-full pt-[12rem] pb-[1rem];
@@ -94,5 +180,5 @@
                 }
             }
         }
-    }        
+    }
 }

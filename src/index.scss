@@ -5,6 +5,7 @@
 body{
     font-family: Yekan Bakh;
     font-weight: bold;
+    @apply bg-transparent;
 }
 
 @import './resources/font/stylesheet.css';

@@ -1,4 +1,4 @@
-import '../styles/billboardsearch.scss';
+import './styles/billboardsearch.scss';
 import { FaChevronDown } from 'react-icons/fa6';
 import { BiSearch } from 'react-icons/bi';
 

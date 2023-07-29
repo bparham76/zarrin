@@ -1,10 +1,10 @@
-import './styles/footer-landing.scss';
+import './styles/footer.scss';
 import RZ from '../../resources/img/reza zarin 02.png';
 import { BsEnvelopeAt } from 'react-icons/bs';
 import { FiPhoneCall } from 'react-icons/fi';
 import { LiaMapMarkedAltSolid } from 'react-icons/lia';
 
-const FooterLanding = () => {
+const Footer = () => {
 	return (
 		<div className='footer'>
 			<div className='top'>
@@ -75,4 +75,4 @@ const FooterLanding = () => {
 	);
 };
 
-export default FooterLanding;
+export default Footer;
