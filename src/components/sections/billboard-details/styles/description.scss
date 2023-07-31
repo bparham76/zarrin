@@ -1,0 +1,91 @@
+@tailwind components;
+
+@layer components{
+    // @media screen and(max-width: theme('screens.sm')) {
+    @media screen {
+        .description-container{
+            @apply w-full mt-4;
+            
+            .icon{
+                @apply font-bold text-2xl;
+            }
+            
+            p{
+                @apply text-z-dark-blue flex gap-2;
+            }
+
+            p:nth-of-type(2){
+                @apply font-normal text-lg mt-4;
+            }
+
+            .btn-container{
+                @apply w-full flex justify-end;
+
+                button {
+                    @apply p-2 text-z-dark-blue flex gap-2;
+                }
+            }
+
+            .comments-container{
+                @apply w-full;
+
+                .slider-header{
+                    @apply w-full pt-4 flex justify-start gap-2;
+
+                    .icon{
+                        @apply text-2xl text-z-dark-blue;
+                    }
+                    p{
+                        @apply text-z-dark-blue text-lg;
+                    }
+
+                }
+                
+                .comments-slider {
+                    @apply w-full m-0 p-0 overflow-hidden;
+                
+                    .comment-item {
+                        @apply w-full p-2;
+                        direction: rtl;
+                
+                        .comment-body {
+                            @apply w-full bg-z-cyan-0 rounded-lg p-2;
+                            
+                            &>div:nth-of-type(1){
+                                @apply py-2 flex w-full justify-between;
+
+                                .img{
+                                    @apply rounded-full w-14 h-14 bg-z-gray;
+                                }
+
+                                .ids{
+                                    @apply flex-1 ps-2 text-z-gray;
+                                    p{
+                                        @apply m-0;
+                                    }
+                                    p:nth-of-type(1){
+                                        @apply text-xl text-z-dark-blue;
+                                    }
+                                }
+                            }
+                            
+                            &>div:nth-of-type(2){}
+                        }
+                    }
+                }
+            }
+
+            .similar-billboards{
+                @apply w-full m-0 p-0;
+
+                .slider-item{
+                    @apply w-full p-2;
+
+                    .item-body{
+                        @apply w-full rounded-lg shadow-z-gray shadow-md;
+                    }
+                }
+            }
+        }
+    }
+}

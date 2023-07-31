@@ -3,18 +3,18 @@
 @layer components{
     @media screen and (max-width: theme('screens.sm')) {
         .page{
-            @apply w-full flex flex-wrap gap-2 p-4 bg-transparent;
+            @apply w-full flex flex-wrap gap-2 m-0 p-4 bg-transparent;
 
             .gallery{
-                @apply w-full p-0 m-0 basis-full flex-shrink;
+                @apply w-full p-0 m-0 basis-full;
             }
 
             .cta{
-                @apply w-full p-0 m-0 basis-full flex-shrink;
+                @apply w-full p-0 m-0 basis-full;
             }
 
             .description{
-                @apply w-full p-0 m-0 basis-full flex-shrink;
+                @apply w-full p-0 m-0 basis-full;
             }
         }
     }

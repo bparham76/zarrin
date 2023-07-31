@@ -2,6 +2,7 @@ import './styles/gallery.scss';
 import { FcLike } from 'react-icons/fc';
 import { BsShare } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai';
+import { IoLocationOutline } from 'react-icons/io5';
 
 const Gallery = () => {
 	return (
@@ -25,9 +26,12 @@ const Gallery = () => {
 						3.5/5
 					</p>
 				</div>
-				<p>hello</p>
-				<p>hello</p>
-				<p>hello</p>
+				<p>
+					<IoLocationOutline /> مازندران
+				</p>
+				<p>
+					<IoLocationOutline /> رامسر
+				</p>
 			</div>
 		</div>
 	);

@@ -29,12 +29,12 @@
                     @apply basis-full shrink-0 flex justify-between;
 
                     p{
-                        @apply text-black bg-transparent rounded-none;
+                        @apply text-black bg-transparent rounded-none items-start font-bold;
                     }
                 }
                 
                 p {
-                    @apply flex gap-2 px-4 rounded-lg text-white bg-z-dark-blue;
+                    @apply flex gap-2 px-2 items-center rounded-md font-normal text-white bg-z-dark-blue;
                 }
             }
         }   

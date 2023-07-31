@@ -7,8 +7,8 @@ import {Landing, BillboardDetails} from './pages';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-  // <Landing />
-  <BillboardDetails />
+  <Landing />
+  // <BillboardDetails />
   //</React.StrictMode>
 );
 

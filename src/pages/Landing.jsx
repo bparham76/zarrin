@@ -1,13 +1,12 @@
+import { Header, Footer } from '../components/sections';
 import {
-	Header,
-	Footer,
 	BillboardSearch,
 	Hero,
 	ChosenCities,
 	BillboardInfo,
 	BlogEnteries,
 	PodcastEnteries,
-} from '../components/sections';
+} from '../components/sections/landing';
 
 const Landing = () => {
 	return (
