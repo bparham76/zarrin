@@ -3,6 +3,7 @@ import { HiMiniBars3BottomRight } from 'react-icons/hi2';
 import { FaChevronLeft } from 'react-icons/fa6';
 import { BiMessageRounded } from 'react-icons/bi';
 import { AiFillStar } from 'react-icons/ai';
+import { BillboardSlider, CommentsForm } from '../../common';
 import Slider from 'react-slick';
 
 const Description = () => {
@@ -26,9 +27,7 @@ const Description = () => {
 					<div>
 						Lorem, ipsum dolor sit amet consectetur adipisicing
 						elit. Eveniet nulla quam consequuntur assumenda
-						voluptate, doloribus ex unde! Cumque iste, voluptatum
-						sed odit deserunt velit earum necessitatibus sapiente
-						fugit deleniti amet!
+						voluptate, doloribus ex unde!
 					</div>
 				</div>
 			</div>
@@ -53,6 +52,9 @@ const Description = () => {
 					<FaChevronLeft />
 				</button>
 			</div>
+
+			<BillboardSlider />
+
 			<div className='comments-container'>
 				<div className='slider-header'>
 					<BiMessageRounded className='icon' />
@@ -61,6 +63,7 @@ const Description = () => {
 				<div className='comments-slider'>
 					<Slider
 						rtl
+						centerMode
 						swipe
 						draggable>
 						{[...new Array(5)].map((item, index) => (
@@ -74,16 +77,7 @@ const Description = () => {
 					</button>
 				</div>
 			</div>
-			<div className='similar-billboards'>
-				<Slider
-					rtl
-					swipe
-					draggable>
-					{[...new Array(5)].map((item, index) => (
-						<CommentItem key={index} />
-					))}
-				</Slider>
-			</div>
+			<CommentsForm />
 		</div>
 	);
 };

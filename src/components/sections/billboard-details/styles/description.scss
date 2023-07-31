@@ -27,7 +27,7 @@
             }
 
             .comments-container{
-                @apply w-full;
+                @apply w-full my-8;
 
                 .slider-header{
                     @apply w-full pt-4 flex justify-start gap-2;
@@ -71,18 +71,6 @@
                             
                             &>div:nth-of-type(2){}
                         }
-                    }
-                }
-            }
-
-            .similar-billboards{
-                @apply w-full m-0 p-0;
-
-                .slider-item{
-                    @apply w-full p-2;
-
-                    .item-body{
-                        @apply w-full rounded-lg shadow-z-gray shadow-md;
                     }
                 }
             }

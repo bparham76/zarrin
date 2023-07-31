@@ -1,0 +1,55 @@
+@tailwind components;
+
+@layer components{
+    @media screen {
+        .slider-container{
+            @apply w-full m-0 p-0 relative overflow-hidden;
+
+            .title{
+                @apply my-4 flex;
+
+                &>div {
+                    @apply flex gap-2 items-center rounded-lg bg-z-gray shadow-z-gray shadow-md;
+                    
+                    p {
+                        @apply text-white ps-2;
+                    }
+
+                    button{
+                        @apply bg-white text-z-dark-blue p-2 rounded-lg font-normal text-sm;
+                    }
+                }
+            }
+
+            .slider-item{
+                @apply p-2 w-full;
+
+                direction: rtl;
+
+                .card{
+                    @apply w-full rounded-lg bg-white shadow-z-gray shadow-md p-0 overflow-hidden;
+
+                    &>img{
+                        @apply w-full bg-z-gray aspect-video;
+                    }
+
+                    .info{
+                        @apply w-full h-16 p-1;
+                        
+                        .caption{
+                            @apply w-full flex items-center justify-between;
+                        }
+
+                        .details{
+                            @apply w-full flex gap-2 items-center justify-around mt-2;
+
+                            &>div{
+                                @apply flex gap-2 text-sm font-normal;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

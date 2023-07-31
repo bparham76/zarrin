@@ -1,3 +1,5 @@
 import BillboardSliderItem from "./BillboardSliderItem";
+import BillboardSlider from "./BillboardSlider";
+import CommentsForm from "./CommentsForm";
 
-export { BillboardSliderItem };
+export { BillboardSliderItem, BillboardSlider, CommentsForm };
