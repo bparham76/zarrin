@@ -1,5 +1,6 @@
 import './styles/billboarddetails.scss';
 import { Header, Footer } from '../components/sections';
+import { BillboardSlider } from '../components/common';
 import {
 	Gallery,
 	CTA,
@@ -19,6 +20,9 @@ const BillboardDetails = () => {
 				</div>
 				<div className='description'>
 					<Description />
+				</div>
+				<div className='similar-billboards'>
+					<BillboardSlider />
 				</div>
 			</div>
 			<Footer />

@@ -34,16 +34,16 @@
                     }
 
                     .info{
-                        @apply w-full h-16 p-1;
+                        @apply w-full p-1;
                         
-                        .caption{
-                            @apply w-full flex items-center justify-between;
+                        .caption>p{
+                            @apply w-full flex items-center justify-around;
                         }
 
                         .details{
                             @apply w-full flex gap-2 items-center justify-around mt-2;
 
-                            &>div{
+                            &>div>p{
                                 @apply flex gap-2 text-sm font-normal;
                             }
                         }

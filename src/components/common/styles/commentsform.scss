@@ -31,4 +31,24 @@
             }
         }
     }
+
+    @media screen and (min-width: theme('screens.lg')){
+        .comments-from-container {
+            .info {
+                @apply flex-row;
+
+                &>input[type=text] {
+                    @apply basis-1/2;
+                }
+            }
+
+            .action {
+                @apply w-full pt-2 flex justify-end;
+
+                button {
+                    @apply bg-z-dark-blue text-white p-2 px-16 rounded-lg;
+                }
+            }
+        }
+    }
 }

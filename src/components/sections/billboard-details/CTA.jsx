@@ -53,6 +53,10 @@ const CTA = () => {
 					</div>
 				</div>
 			</div>
+			<div className='buy'>
+				<div>{/* ICON AND PRICE TODO */}</div>
+				<button>تماس با پشتیبانی</button>
+			</div>
 			<div className='location-board'>
 				<h4>
 					<IoLocationOutline />

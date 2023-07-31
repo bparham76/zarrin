@@ -80,7 +80,7 @@ const BillboardSlider = () => {
 			</div>
 			<Slider
 				ref={SliderRef}
-				centerMode
+				centerMode={mobile}
 				draggable
 				swipe
 				slidesToShow={mobile ? 1 : 4}

@@ -3,7 +3,7 @@ import { HiMiniBars3BottomRight } from 'react-icons/hi2';
 import { FaChevronLeft } from 'react-icons/fa6';
 import { BiMessageRounded } from 'react-icons/bi';
 import { AiFillStar } from 'react-icons/ai';
-import { BillboardSlider, CommentsForm } from '../../common';
+import { CommentsForm } from '../../common';
 import Slider from 'react-slick';
 
 const Description = () => {
@@ -52,8 +52,6 @@ const Description = () => {
 					<FaChevronLeft />
 				</button>
 			</div>
-
-			<BillboardSlider />
 
 			<div className='comments-container'>
 				<div className='slider-header'>
