@@ -3,8 +3,16 @@ import { FcLike } from 'react-icons/fc';
 import { BsShare } from 'react-icons/bs';
 import { AiFillStar } from 'react-icons/ai';
 import { IoLocationOutline } from 'react-icons/io5';
+import Slider from 'react-slick';
 
 const Gallery = () => {
+	const ImageItem = () => {
+		return (
+			<div className='image-item'>
+				<img src='' />
+			</div>
+		);
+	};
 	return (
 		<div className='gallery-container'>
 			<div className='image'>
@@ -16,6 +24,18 @@ const Gallery = () => {
 						<BsShare />
 					</button>
 				</div>
+			</div>
+			<div className='image-gallery'>
+				<Slider
+					rtl
+					swipe
+					draggable
+					slidesToShow={4}
+					slidesToScroll={1}>
+					{[...new Array(8)].map((item, index) => (
+						<ImageItem key={index} />
+					))}
+				</Slider>
 			</div>
 			<div className='info'>
 				<h4>تابلو تبلیغاتی مقابل رستوران خلج در رامسر</h4>

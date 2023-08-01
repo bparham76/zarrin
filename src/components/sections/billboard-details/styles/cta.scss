@@ -41,7 +41,7 @@
 
     @media screen and (min-width: theme('screens.lg')){
         .cta-container {
-            @apply w-full p-4 bg-white rounded-lg shadow-md shadow-z-gray;
+            @apply w-full p-4 bg-white rounded-lg shadow-lg shadow-gray-300;
 
             h4 {
                 @apply hidden;
@@ -70,8 +70,33 @@
             .buy {
                 @apply w-full my-4 block;
 
+                &>div{
+                    @apply w-full flex py-4 justify-between pe-[10%];
+
+                    svg{
+                        @apply text-2xl text-z-blue;
+                    }
+
+                    &>p{
+                        @apply text-z-blue font-bold text-xl flex gap-2;
+                    }
+                }
+
                 button{
-                    @apply w-full bg-gradient-to-bl from-z-green to-white text-white text-xl py-2 rounded-lg;
+                    @apply w-full relative overflow-hidden z-10 transition-all bg-gradient-to-bl from-z-green to-green-200 text-white text-xl py-2 rounded-lg flex gap-4 items-center justify-center;
+
+                    &::before{
+                        @apply block absolute bg-gradient-to-tr from-z-green to-green-200 h-full w-full opacity-0 transition-all -z-10 origin-center;
+                        content: '';
+                    }
+
+                    &:hover::before{
+                        @apply opacity-100;
+                    }
+
+                    &:active{
+                        @apply scale-105;
+                    }
                 }
             }
 

@@ -6,6 +6,8 @@ import { MdOutlineFitScreen } from 'react-icons/md';
 import { AiOutlineCreditCard } from 'react-icons/ai';
 import { PiCalendarCheckLight } from 'react-icons/pi';
 import { IoLocationOutline } from 'react-icons/io5';
+import { PiMoneyLight } from 'react-icons/pi';
+import { FaPhoneAlt } from 'react-icons/fa';
 
 const CTA = () => {
 	return (
@@ -54,8 +56,17 @@ const CTA = () => {
 				</div>
 			</div>
 			<div className='buy'>
-				<div>{/* ICON AND PRICE TODO */}</div>
-				<button>تماس با پشتیبانی</button>
+				<div>
+					<p>
+						<PiMoneyLight />
+						اجاره ماهیانه:
+					</p>
+					<p>38.000.000 تومان</p>
+				</div>
+				<button>
+					<FaPhoneAlt />
+					تماس با پشتیبانی
+				</button>
 			</div>
 			<div className='location-board'>
 				<h4>

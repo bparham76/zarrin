@@ -50,6 +50,50 @@
                     }
                 }
             }
+
+            .control{
+                @apply hidden;
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.lg')){
+        .slider-container{
+            @apply overflow-visible;
+
+            .title>div{
+                p{
+                    @apply py-4 px-8 text-xl;
+                }
+
+                button{
+                    @apply hidden;
+                }
+            }
+
+            .control {
+                @apply absolute transition-all block p-4 bg-z-dark-blue text-white font-bold text-xl top-1/2 z-20 rounded-lg;
+        
+                &.left {
+                    @apply left-0 -translate-x-[120%];
+                }
+        
+                &.right {
+                    @apply right-0 translate-x-[120%];
+                }
+
+                &:hover{
+                    @apply bg-z-blue;
+                }
+
+                &:active{
+                    @apply scale-105;
+                }
+            }
+
+            .card:hover{
+                @apply cursor-pointer;
+            }
         }
     }
 }

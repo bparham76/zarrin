@@ -13,17 +13,17 @@ const BillboardSlider = () => {
 
 	const mobile = useMobileScreen();
 
-	const LeftArrow = ({ sliderRef }) => (
+	const LeftArrow = () => (
 		<button
-			className='carousel-control left'
-			onClick={(e) => sliderRef?.current?.slickNext()}>
+			className='control left'
+			onClick={(e) => SliderRef?.current?.slickNext()}>
 			<FaChevronLeft />
 		</button>
 	);
-	const RightArrow = ({ sliderRef }) => (
+	const RightArrow = () => (
 		<button
-			className='carousel-control right'
-			onClick={(e) => sliderRef?.current?.slickPrev()}>
+			className='control right'
+			onClick={(e) => SliderRef?.current?.slickPrev()}>
 			<FaChevronRight />
 		</button>
 	);
@@ -72,6 +72,8 @@ const BillboardSlider = () => {
 
 	return (
 		<div className='slider-container'>
+			<LeftArrow />
+			<RightArrow />
 			<div className='title'>
 				<div>
 					<p>بیلبورد های مشابه</p>

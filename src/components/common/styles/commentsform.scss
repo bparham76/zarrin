@@ -42,11 +42,23 @@
                 }
             }
 
+            .title{
+                @apply text-2xl;
+            }
+
             .action {
                 @apply w-full pt-2 flex justify-end;
 
                 button {
-                    @apply bg-z-dark-blue text-white p-2 px-16 rounded-lg;
+                    @apply bg-z-dark-blue text-white p-2 px-16 rounded-lg transition-all;
+
+                    &:hover{
+                        @apply bg-z-blue;
+                    }
+
+                    &:active{
+                        @apply scale-105;
+                    }
                 }
             }
         }

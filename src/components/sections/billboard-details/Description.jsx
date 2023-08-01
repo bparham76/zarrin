@@ -1,12 +1,33 @@
 import './styles/description.scss';
 import { HiMiniBars3BottomRight } from 'react-icons/hi2';
-import { FaChevronLeft } from 'react-icons/fa6';
 import { BiMessageRounded } from 'react-icons/bi';
 import { AiFillStar } from 'react-icons/ai';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
 import { CommentsForm } from '../../common';
 import Slider from 'react-slick';
+import { useMobileScreen } from '../../../hooks';
+import { useRef } from 'react';
 
 const Description = () => {
+	const mobile = useMobileScreen();
+
+	const SliderRef = useRef();
+
+	const LeftArrow = () => (
+		<button
+			className='control left'
+			onClick={(e) => SliderRef?.current?.slickNext()}>
+			<FaChevronLeft />
+		</button>
+	);
+	const RightArrow = () => (
+		<button
+			className='control right'
+			onClick={(e) => SliderRef?.current?.slickPrev()}>
+			<FaChevronRight />
+		</button>
+	);
+
 	const CommentItem = () => {
 		return (
 			<div className='comment-item'>
@@ -44,6 +65,28 @@ const Description = () => {
 				Lorem, ipsum dolor sit amet consectetur adipisicing elit.
 				Dolorem illo architecto minus reiciendis, quae quis sapiente
 				facilis temporibus harum aut porro vero asperiores? Ab, debitis
+				aspernatur impedit vel ratione error?Lorem, ipsum dolor sit amet
+				consectetur adipisicing elit. Dolorem illo architecto minus
+				reiciendis, quae quis sapiente facilis temporibus harum aut
+				porro vero asperiores? Ab, debitis aspernatur impedit vel
+				ratione error?Lorem, ipsum dolor sit amet consectetur
+				adipisicing elit. Dolorem illo architecto minus reiciendis, quae
+				quis sapiente facilis temporibus harum aut porro vero
+				asperiores? Ab, debitis aspernatur impedit vel ratione
+				error?Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+				Dolorem illo architecto minus reiciendis, quae quis sapiente
+				facilis temporibus harum aut porro vero asperiores? Ab, debitis
+				aspernatur impedit vel ratione error?Lorem, ipsum dolor sit amet
+				consectetur adipisicing elit. Dolorem illo architecto minus
+				reiciendis, quae quis sapiente facilis temporibus harum aut
+				porro vero asperiores? Ab, debitis aspernatur impedit vel
+				ratione error?Lorem, ipsum dolor sit amet consectetur
+				adipisicing elit. Dolorem illo architecto minus reiciendis, quae
+				quis sapiente facilis temporibus harum aut porro vero
+				asperiores? Ab, debitis aspernatur impedit vel ratione
+				error?Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+				Dolorem illo architecto minus reiciendis, quae quis sapiente
+				facilis temporibus harum aut porro vero asperiores? Ab, debitis
 				aspernatur impedit vel ratione error?
 			</p>
 			<div className='btn-container'>
@@ -60,14 +103,20 @@ const Description = () => {
 				</div>
 				<div className='comments-slider'>
 					<Slider
+						ref={SliderRef}
+						slidesToShow={mobile ? 1 : 2}
 						rtl
-						centerMode
+						centerMode={mobile}
 						swipe
 						draggable>
 						{[...new Array(5)].map((item, index) => (
 							<CommentItem key={index} />
 						))}
 					</Slider>
+				</div>
+				<div className='slider-control'>
+					<LeftArrow />
+					<RightArrow />
 				</div>
 				<div className='btn-container'>
 					<button>
