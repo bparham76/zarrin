@@ -1,0 +1,150 @@
+@tailwind components;
+
+@layer components{
+    @media screen and (max-width: theme('screens.md')) {
+        .hero-container{
+            @apply w-full bg-z-gray;
+
+            .hero-title-container{
+                @apply w-full flex flex-col items-center;
+                
+                .title{
+                    @apply text-z-dark-blue w-full justify-center gap-1 items-center flex bg-z-light-blue p-4 rounded-b-[2rem];
+                    
+                    h2{
+                        @apply text-3xl font-extrabold;
+                    }
+                    h6{
+                        @apply text-sm;
+                    }
+                }
+
+                .counters{
+                    @apply hidden;
+                }
+            }
+
+            .hero-app-container{
+                @apply w-full;
+
+                .hero-app-canvas{
+                    @apply w-full flex flex-col;
+
+                    .hero-app{
+                        @apply w-full h-[20rem] flex items-center justify-center z-20 p-2;
+                    }
+
+                    .hero-colleagues{
+                        @apply w-full;
+
+                        .hero-colleagues-title{
+                            @apply w-full bg-white rounded-t-[2rem] flex justify-around items-center p-4 pb-0;
+
+                            p{
+                                @apply text-sm text-z-gray;
+                            }
+
+                            button{
+                                @apply text-white text-xs bg-z-gray p-2 rounded-xl;
+
+                                &:active{
+                                    @apply bg-z-dark-blue;
+                                }
+                            }
+                        }
+
+                        .colleagues-icon-container{
+                            @apply w-full flex flex-row items-center justify-center p-4 gap-1 bg-white;
+
+                            .colleague-icon{
+                                @apply w-16 aspect-square rounded-full bg-gray-200 shadow-gray-400 shadow-md;
+                                @apply grayscale;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    @media screen and (min-width: theme('screens.md')) {
+        .hero-container {
+            @apply w-full p-0 m-0 h-[40rem] flex;
+
+            .hero-title-container {
+                @apply basis-1/4 flex flex-col items-center justify-around p-8;
+
+                .title {
+                    @apply text-z-dark-blue;
+            
+                    h2 {
+                        @apply text-7xl text-center font-extrabold;
+                    }
+            
+                    h6 {
+                        @apply text-3xl text-center;
+                    }
+                }
+
+                .counters{
+                    @apply flex flex-col gap-6;
+
+                    .counter {
+                        @apply w-full flex flex-col gap-0 px-6 text-center rounded-2xl rounded-tl-none cursor-default;
+                    }
+                
+                    .counter-active {
+                        @apply bg-z-light-blue text-white shadow-lg shadow-z-light-blue;
+                    }
+                
+                    .counter-not-active {
+                        @apply text-z-gray border border-z-gray;
+                    }
+                }
+            }
+
+            .hero-app-container {
+                @apply basis-3/4 p-2 pe-0;
+
+                .hero-app-canvas {
+                    @apply bg-gray-400 w-full h-full rounded-r-[4rem] flex flex-col items-center;
+
+                    .hero-app{
+                        @apply w-full basis-full;
+                    }
+
+                    .hero-colleagues {
+                        @apply w-4/5 bg-white rounded-t-[4rem] h-[8rem] flex flex-col justify-between;
+
+                        .hero-colleagues-title {
+                            @apply w-full flex justify-end items-center px-[4rem] pt-[1rem] gap-10;
+
+                            p{
+                                @apply text-gray-400 text-lg;
+                            }
+
+                            button {
+                                @apply px-4 text-lg text-white rounded-full bg-gray-400 transition-all;
+                                &:hover {
+                                    @apply bg-z-blue;
+                                }
+                            
+                                &:active {
+                                    @apply scale-105;
+                                }
+                            }
+                        }
+
+                        .colleagues-icon-container {
+                            @apply w-full flex justify-center items-center px-[4rem] pt-[1rem] gap-8;
+
+                            .colleague-icon {
+                                @apply aspect-square grayscale bg-gray-200 shadow-md w-12 rounded-full transition-all duration-200 hover:cursor-pointer hover:scale-[230%] hover:grayscale-0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

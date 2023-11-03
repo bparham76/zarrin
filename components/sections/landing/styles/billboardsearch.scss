@@ -1,0 +1,96 @@
+@tailwind components;
+
+@layer components{
+    @media screen {
+        .billboardsearch {
+            @apply w-full px-4 my-4;
+
+            .select {
+                @apply bg-white basis-1/3 rounded-2xl p-2 flex items-center justify-between h-12;
+
+                input[type=text] {
+                    @apply text-lg w-full;
+                    &:focus {
+                        @apply outline-none;
+                    }
+                }
+
+                &:nth-of-type(4){
+                    @apply hidden;
+                }
+            }
+
+            h2 {
+                @apply hidden;
+            }
+
+            .input-container {
+                @apply w-full bg-z-cyan-0 rounded-3xl p-3 grid grid-cols-5 gap-1;
+
+                div{
+                    &:nth-of-type(1){
+                        @apply col-span-4 flex justify-between gap-1;
+                    }
+
+                    &:nth-of-type(2) {
+                        @apply col-span-1;
+                    }
+                }
+
+                button {
+                    @apply bg-z-dark-blue text-white px-4 w-full h-full text-4xl rounded-2xl transition-all flex items-center justify-center;
+
+                    p{
+                        @apply hidden;
+                    }
+
+                    &:active {
+                        @apply bg-z-blue;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.md')) {
+        .billboardsearch{
+            @apply px-16;
+
+            .select{
+                @apply h-20 basis-1/4;
+
+                input[type=text] {
+                        @apply text-3xl;
+                }
+
+                &:nth-of-type(4){
+                    @apply flex;
+                }
+            }
+
+            h2{
+                @apply block text-4xl text-z-dark-blue font-bold mb-4 mt-12;
+            }
+
+            .input-container{
+                @apply gap-4;
+
+                div:nth-of-type(1){
+                    @apply gap-4;
+                }
+
+                button{
+                    p{
+                        @apply block text-3xl;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.xl')) {
+        .billboardsearch {
+            @apply px-20;
+        }
+    }
+}

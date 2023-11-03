@@ -1,0 +1,21 @@
+@tailwind components;
+
+@layer components{
+    @media screen {
+        .modal-container{
+            @apply w-full z-50 h-full bg-black bg-opacity-60 fixed top-0 left-0 transition-opacity opacity-0 flex items-center justify-center;
+
+            .modal-card{
+                @apply rounded-xl bg-white shadow-md shadow-black transition-all translate-y-10;
+            }
+
+            &.show{
+                @apply opacity-100;
+
+                .modal-card{
+                    @apply translate-y-0;
+                }
+            }
+        }
+    }
+}

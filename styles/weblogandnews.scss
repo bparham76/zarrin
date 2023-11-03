@@ -1,0 +1,27 @@
+@tailwind components;
+
+@layer components{
+    @media screen{
+        .news-blog-data{
+            @apply w-full flex flex-col;
+            .title{
+                @apply order-2 pt-4;
+            }
+            .content{
+                @apply order-1;
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.md')) {
+        .news-blog-data {
+            .title {
+                @apply order-1 pt-0;
+            }
+
+            .content {
+                @apply order-2;
+            }
+        }
+    }
+}

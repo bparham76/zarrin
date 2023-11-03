@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-yekan);
+  font-weight: bold;
+  @apply bg-transparent;
+}
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+/* @import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'); */
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+/* html{
+  font-size: 48px;
+} */
+
+@layer utilities{
+
+  /* @media screen {
+    html {
+      font-size: 12px;
+    }
+  }
+
+  @media screen and (min-width: theme('screens.sm')) {
+    html {
+      font-size: 16px;
+    }
+  } */
+
+  /* @media screen and (min-width: theme('screens.lg')) {
+    html {
+      font-size: 18px;
+    }
+  } */
+
+  @media screen and (min-width: theme('screens.2xl')) {
+    html {
+      font-size: 18px;
+    }
+  }
+
+  @media screen and (min-width: 1920px){
+    html{
+      font-size: 24px;
+    }
+  }
+
+  @media screen and (min-width: 2560px) {
+    html {
+      font-size: 36px;
+    }
+  }
+
+  @media screen and (min-width: 3840px) {
+    html {
+      font-size: 48px;
+    }
+  }
+
+  @media screen and (min-width: 4120px) {
+    html {
+      font-size: 60px;
+    }
+  }
+}

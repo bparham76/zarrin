@@ -1,0 +1,247 @@
+@tailwind components;
+
+@layer components{
+    
+    @media screen {
+        .billboard-single {
+            @apply w-full mb-2;
+            aspect-ratio: 25/16;
+
+            .card-body {
+                @apply w-full h-full bg-white rounded-xl p-0 overflow-hidden;
+                box-shadow: 0 0 7px 0 gray;
+
+                .item-controls {
+                    @apply hidden;
+                }
+
+                .image {
+                    @apply w-full bg-z-gray h-2/3 relative overflow-hidden;
+
+                    .rating {
+                        @apply bg-white rounded-l-md right-0 top-4 absolute w-20 h-6 p-1 flex justify-center gap-1;
+                    }
+
+                    .cart-remove{
+                        @apply hidden;
+                        svg{
+                            @apply hidden;
+                        }
+                    }
+                }
+
+                .info {
+                    @apply w-full h-1/3 flex;
+
+                    .details {
+                        @apply basis-3/4 flex flex-col items-start justify-center p-2;
+
+                        &>div {
+                            @apply w-full text-z-dark-blue text-right text-base font-bold;
+
+                            p {
+                                @apply ps-[5%] line-clamp-1 text-ellipsis whitespace-nowrap;
+                            }
+                        }
+
+                        &>div:nth-of-type(2) {
+                            // @apply grid grid-cols-3;
+                            @apply flex justify-around;
+                            
+                            &>div {
+                                @apply flex gap-1 font-normal py-1 justify-center text-sm;
+
+                                p{
+                                    @apply overflow-hidden text-ellipsis whitespace-nowrap;
+                                }
+                            }
+                        }
+                    }
+
+                    .controls {
+                        @apply basis-1/4 flex items-center justify-center p-4;
+
+                        &>button {
+                            @apply w-full h-full rounded-xl text-white flex items-center justify-center;
+
+                            svg {
+                                @apply text-4xl;
+                            }
+                        }
+
+                        &>button:nth-of-type(1) {
+                            @apply flex bg-z-green;
+                        }
+
+                        &>button:nth-of-type(2) {
+                            @apply hidden bg-z-red;
+                        }
+                    }
+
+                    &.full {
+                        .details{
+                            @apply basis-full w-full items-center;
+                        }
+                        .controls{
+                            @apply hidden;
+                        }
+                    }
+                }
+            }
+
+            &.selected {
+                .card-body {
+                    @apply bg-z-cyan-0;
+
+                    .image .cart-remove {
+                        @apply flex;
+                    }
+
+                    .item-controls>button:nth-of-type(1) {
+                        @apply hidden;
+                    }
+
+                    .info>.controls {
+                        &>button:nth-of-type(1) {
+                            @apply hidden;
+                        }
+
+                        &>button:nth-of-type(2) {
+                            @apply flex;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.md')) {
+        .billboard-single{
+            @apply mb-0;
+            
+            .card-body{
+                
+                &:hover .item-controls {
+                    @apply opacity-100 scale-100;
+                }
+            
+                .item-controls {
+                    @apply opacity-0 bg-black bg-opacity-25 w-full h-full top-0 left-0 transition-all scale-95 flex flex-col gap-2 items-center justify-center;
+            
+                    button, a {
+                        @apply p-2 w-2/3 bg-z-dark-blue text-white flex items-center justify-center gap-2 rounded-xl;
+                    }
+            
+                    &>a {
+                        @apply bg-z-green bg-opacity-75;
+                    }
+
+                    &>button {
+                        @apply bg-z-blue;
+                    }
+                    // &>button:nth-of-type(1) {
+                    //     @apply bg-z-green bg-opacity-75;
+                    // }
+            
+                    // &>button:nth-of-type(2) {
+                    //     @apply bg-z-blue;
+                    // }
+                }
+                
+                .image{
+                    @apply w-full bg-z-gray h-2/3 relative;
+
+                    .rating{
+                        @apply hidden;
+                    }
+                    
+                    .cart-remove {
+                        @apply top-0 left-4 hidden cursor-pointer  absolute w-8 bg-z-red rounded-b-lg z-10 text-xl text-white pb-2 items-end justify-center;
+                        aspect-ratio: 4/5;
+                    
+                        svg {
+                            @apply block;
+                        }
+                    }
+                }
+                
+                .info {
+                    .controls {
+                        @apply hidden;
+                    }
+
+                    .details {
+                        @apply basis-full gap-0;
+
+                        &>div {
+                            @apply items-center;
+
+                            p {
+                                @apply text-center ps-0 text-sm;
+                            }
+                        }
+
+                        &>div:nth-of-type(2) {
+                            @apply text-sm border-z-light-blue border rounded-md gap-0;
+                        }
+                    }
+                }
+            }
+            
+            &.selected {
+                .card-body {
+                    @apply bg-z-cyan-0;
+
+                    .item-controls>button:nth-of-type(1){
+                        @apply hidden;
+                    }
+
+                    .info>.controls{
+                        &>button:nth-of-type(1){
+                            @apply hidden;
+                        }
+                        
+                        &>button:nth-of-type(2) {
+                            @apply flex;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.lg')) {
+        .billboard-single {
+            @apply p-2 m-0;
+            aspect-ratio: 5/4;
+            
+            .card-body {
+                .info {
+                    .details {
+                        &>div:nth-of-type(1) {
+                            p {
+                                @apply text-base;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.xl')){
+        .billboard-single{
+            .card-body{
+                .info{
+                    .details{
+                        &>div:nth-of-type(1) {
+                            p {
+                                @apply text-base;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

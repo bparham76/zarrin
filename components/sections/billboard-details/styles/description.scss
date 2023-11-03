@@ -1,0 +1,184 @@
+@tailwind components;
+
+@layer components{
+    // @media screen and(max-width: theme('screens.sm')) {
+    @media screen {
+        .description-container{
+            @apply w-full mt-4;
+            
+            .icon{
+                @apply font-bold text-2xl;
+            }
+            
+            &>p:nth-of-type(1){
+                @apply text-z-dark-blue flex gap-2;
+            }
+
+            &>p:nth-of-type(2){
+                @apply font-normal text-lg mt-4;
+            }
+
+            div.context{
+                @apply line-clamp-6 text-justify font-normal pt-4;
+
+                h1{
+                    @apply text-4xl;
+                }
+                h2 {
+                    @apply text-2xl;
+                }
+                h3 {
+                    @apply text-xl;
+                }
+                h4 {
+                    @apply text-lg;
+                }
+                p{
+                    @apply text-base;
+                }
+
+                &.full{
+                    @apply line-clamp-none;
+                }
+            }
+
+            .btn-container{
+                @apply w-full flex justify-end;
+
+                button {
+                    @apply p-2 text-z-dark-blue flex gap-2;
+                }
+            }
+
+            .sharing {
+                @apply w-full my-8 flex gap-2;
+
+                &>button {
+                    @apply p-2 aspect-square flex items-center justify-center shadow-md shadow-z-gray rounded-lg transition-all;
+
+                    &:active {
+                        @apply scale-105;
+                    }
+                }
+
+                &>div {
+                    @apply p-2 flex gap-1 items-center justify-start rounded-lg shadow-md shadow-z-gray;
+
+                    &>p {
+                        @apply pl-2 font-normal;
+                    }
+                }
+            }
+            .comments-container{
+                @apply w-full my-8;
+
+                .slider-header{
+                    @apply w-full pt-4 flex justify-start gap-2;
+
+                    .icon{
+                        @apply text-2xl text-z-dark-blue;
+                    }
+                    p{
+                        @apply text-z-dark-blue text-lg;
+                    }
+
+                }
+
+                .slider-control{
+                    @apply hidden;
+                }
+                
+                .no-comments{
+                    @apply w-full flex items-center justify-center text-z-dark-blue font-bold border rounded-lg border-z-light-blue my-8 py-8;
+                }
+
+                .comments-slider {
+                    @apply w-full m-0 p-0 overflow-hidden;
+                
+                    .comment-item {
+                        @apply w-full p-2;
+                        direction: rtl;
+                
+                        .comment-body {
+                            @apply w-full bg-z-cyan-0 rounded-lg p-2;
+                            
+                            &>div:nth-of-type(1){
+                                @apply py-2 flex w-full justify-between;
+
+                                .img{
+                                    @apply rounded-full w-14 h-14 bg-z-gray;
+                                }
+
+                                .ids{
+                                    @apply flex-1 ps-2 text-z-gray;
+                                    p{
+                                        @apply m-0;
+                                    }
+                                    p:nth-of-type(1){
+                                        @apply text-xl text-z-dark-blue;
+                                    }
+                                }
+                            }
+                            
+                            // &>div:nth-of-type(2){}
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.lg')) {
+        .description-container{
+
+            div.context{
+                @apply line-clamp-none text-justify;
+            }
+
+            &>.btn-container{
+                @apply hidden;
+            }
+        
+
+            .comments-container{
+                @apply relative overflow-visible;
+
+                .slider-control{
+                    @apply w-full flex justify-end gap-2;
+
+                    .control{
+                        @apply text-z-gray font-bold rounded-lg border border-z-gray p-2 transition-all;
+
+                        &.left{
+                            @apply order-2;
+                        }
+
+                        &.right{
+                            @apply order-1;
+                        }
+
+                        &:hover{
+                            @apply bg-z-gray text-white;
+                        }
+
+                        &:active{
+                            @apply scale-105;
+                        }
+                    }
+                }
+
+                .btn-container{
+                    @apply absolute top-2 left-0 w-full;
+
+                    button{
+                        @apply bg-z-cyan-2 rounded-lg p-2 px-4;
+                    }
+                }
+
+                // .sharing {
+                //     @apply pr-12;
+                // }
+            }
+        }
+    }
+}

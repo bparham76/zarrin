@@ -1,0 +1,212 @@
+@tailwind components;
+
+@layer components{
+
+    @media screen {
+        .by-state-hero-container{
+            @apply w-full rounded-b-xl flex flex-col items-center mb-4 bg-slate-300;
+
+            .title{
+                @apply w-1/2 py-1 h-auto bg-white text-z-blue font-bold text-2xl text-center rounded-b-2xl;
+            }
+
+            .carousel{
+                @apply w-full overflow-x-hidden pt-[6rem] pb-5 relative;
+                
+                &:before {
+                    @apply w-full h-full absolute top-0 left-0 bg-gradient-to-t from-z-blue to-transparent;
+                    content: '';
+                }
+
+                .arrow{@apply hidden;}
+
+                .item{
+                    @apply w-full p-2 pt-[4rem];
+
+                    .card{
+                        @apply bg-white w-full flex flex-col items-center aspect-square rounded-b-[2rem] rounded-t-md shadow-md shadow-z-cyan-1;
+                    
+                        .image {
+                            @apply w-2/3 aspect-square rounded-lg bg-black -translate-y-1/2;
+                        }
+
+                        .info {
+                            @apply w-full -translate-y-1/2 text-z-dark-blue;
+
+                            &>p{@apply hidden;}
+
+                            &>div {
+                                @apply flex w-full justify-around px-4;
+
+                                p {
+                                    @apply font-extrabold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .description{
+                @apply w-full text-right bg-z-blue rounded-b-2xl p-2 text-lg flex flex-col items-center;
+
+                .context{
+                    @apply m-0 p-0 px-2 h-32 max-h-80 overflow-hidden transition-all text-justify;
+                    @apply text-transparent bg-clip-text bg-gradient-to-b from-white to-transparent;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+
+                    // &::-webkit-scrollbar{
+                    //     display: none;
+                    // }
+                    // -ms-overflow-style: none;
+                    // scrollbar-width: none;
+
+                    &.open{
+                        @apply h-80 overflow-y-scroll text-white bg-none;
+                        -webkit-background-clip: unset;
+                        -webkit-text-fill-color: white;
+                    }
+
+                    p{
+                        @apply relative font-normal;
+    
+                        &::after{
+                            @apply absolute top-0 left-0 w-full h-full bg-gradient-to-t from-z-blue to-transparent z-10;
+                            content: '';
+                        }
+                    }
+                }
+
+
+                button{
+                    @apply w-1/4 rounded-lg m-2 transition-colors text-center flex flex-col items-center bg-transparent p-1 text-white;
+
+                    &:active{
+                        @apply bg-z-blue;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.md')) {
+        .by-state-hero-container {
+            @apply rounded-b-2xl rounded-t-xl mb-0 mt-2;
+
+            .title {
+                @apply w-1/3 p-4 text-3xl font-extrabold rounded-b-3xl;
+            }
+
+            .carousel {
+                @apply order-2 rounded-b-2xl px-16 pt-2 relative;
+
+                .arrow {
+                    @apply block m-5 text-6xl p-5 text-white absolute top-1/2 -translate-y-1/2 z-10 transition-transform;
+
+                    &:active {
+                        @apply scale-105;
+                    }
+
+                    &.left {
+                        @apply left-[-2rem];
+                    }
+
+                    &.right {
+                        @apply right-[-2rem];
+                    }
+                }
+
+                .item {
+                    .card {
+                        @apply aspect-auto h-[9rem] rounded-b-[2rem];
+
+                        .image {
+                            @apply -translate-y-1/3 rounded-[2rem];
+                        }
+
+                        .info {
+                            &>p {
+                                @apply block text-center font-extrabold text-4xl text-z-dark-blue w-full line-clamp-1 whitespace-nowrap text-ellipsis;
+                            }
+
+                            &>div {
+                                @apply hidden;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .description {
+                @apply order-1 bg-transparent px-16 mt-[8rem];
+
+                p {
+                    @apply line-clamp-none;
+
+                    &::after {
+                        @apply hidden;
+                    }
+                }
+
+                // button {
+                //     @apply hidden;
+                // }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.lg')) {
+        .by-state-hero-container{
+            @apply rounded-b-2xl rounded-t-xl mb-0 mt-2;
+
+            .title{
+                @apply w-1/5 p-4;
+            }
+
+            .carousel{
+                @apply px-40;
+
+                .arrow {
+                    &.left {
+                        @apply left-[3rem];
+                    }
+            
+                    &.right {
+                        @apply right-[3rem];
+                    }
+                }
+                
+                .item{
+                    .card{
+                        @apply aspect-auto h-[11rem] rounded-b-[4rem];
+
+                        .info>p{
+                            @apply translate-y-1/3;
+                        }
+                    }
+                }
+            }
+
+            .description{
+                @apply px-44 mt-[5rem];
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.xl')) {
+        .by-state-hero-container{
+            .carousel{
+                .item{
+                    .card{
+                        .info{
+                            p{
+                                @apply -translate-y-1/2;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

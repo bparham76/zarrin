@@ -1,3 +1,0 @@
-# zarrin
-
-test remote

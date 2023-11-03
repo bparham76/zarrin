@@ -1,0 +1,265 @@
+@tailwind components;
+
+@layer components{
+    @media screen {
+        .news{
+            @apply w-full z-10;
+
+            .news-container{
+                @apply w-full p-2;
+
+                .sidebar{
+                    @apply w-full;
+                    .timeline{
+                        @apply w-full p-2;
+                        .title{
+                            @apply w-full text-2xl font-normal text-z-dark-blue text-center;
+                        }
+                        .timeline-enteries{
+                            @apply w-full flex flex-nowrap overflow-scroll gap-2 pt-2 pb-4;
+                            .timeline-entery{
+                                @apply rounded-lg px-4 py-1 bg-z-cyan-0 font-normal text-sm;
+
+                                .circular{
+                                    @apply hidden;
+                                }
+
+                                .linear{
+                                    @apply hidden;
+                                }
+                                
+                                &.selected {
+                                    @apply font-bold;
+                                }
+                            }
+                        }
+                    }
+
+                    .newsletter{
+                        @apply hidden;
+                    }
+                }
+                .news-list{
+                    @apply w-full p-2;
+
+                    .news-entery{
+                        @apply w-full bg-z-cyan-0 mb-2 rounded-lg flex overflow-hidden;
+
+                        .picture{
+                            @apply basis-1/4 aspect-square bg-z-gray rounded-lg;
+                        }
+
+                        .content{
+                            @apply basis-3/4 p-1 flex flex-col gap-0 relative;
+
+                            button{
+                                @apply flex gap-2 justify-center text-sm font-normal items-center z-20;
+                            }
+
+                            h4{
+                                @apply text-lg;
+                            }
+
+                            p{
+                                @apply line-clamp-2 font-normal text-transparent text-sm bg-clip-text bg-gradient-to-b from-z-dark-blue to-transparent;
+                            }
+
+                            &.full{
+                                p{
+                                    @apply line-clamp-none bg-none text-z-dark-blue;
+                                }
+                            }
+                            
+                            .controls {
+                                @apply absolute w-full left-1/3 bottom-0 flex justify-between p-1 text-[0.6rem] font-normal;
+
+                                &>div {
+                                    @apply flex gap-2;
+                                }
+
+                                &>div:first-of-type{
+                                    @apply text-white;
+                                }
+                            
+                                &>div:nth-of-type(2) {
+                                    @apply basis-2/3;
+                                }
+
+                                &>div:not(:first-of-type){
+                                    @apply hidden;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .show-more {
+                @apply flex justify-center items-center p-4 pt-1;
+            
+                button {
+                    @apply flex gap-2 px-8 p-3 rounded-xl border-4 transition-all;
+
+                    &:active{
+                        @apply scale-105;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.md')) {
+        .news {
+            .news-container {
+                @apply bg-z-cyan-0 mr-[0.5rem] w-[calc(100vw-1rem)] flex flex-row-reverse pt-8;
+
+                .sidebar{
+                    @apply basis-1/5 h-max;
+                    .timeline {
+                        @apply p-2 w-full bg-white rounded-2xl;
+                
+                        .title {
+                            @apply bg-z-cyan-0 rounded-lg w-auto text-xl p-2;
+                        }
+                
+                        .timeline-enteries {
+                            @apply w-full block pt-2 overflow-visible pb-0;
+                
+                            .timeline-entery {
+                                @apply rounded-none bg-transparent text-base relative py-4 overflow-visible cursor-pointer;
+
+                                p{
+                                    @apply translate-y-1/4;
+                                }
+
+                                .circular{
+                                    @apply block transition-shadow absolute w-8 aspect-square bg-white border-4 rounded-full border-z-dark-blue left-0 top-0 translate-y-1/2;
+                                }
+
+                                .linear{
+                                    @apply block absolute w-1 bg-z-dark-blue h-1/2 top-0 left-0 translate-x-[350%] -translate-y-1/3 z-20;
+                                }
+
+                                &:hover .circular{
+                                    box-shadow: 0 0 10px #2F446A;
+                                }
+
+                                &:first-of-type{
+                                    .linear{
+                                        @apply hidden;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                
+                    .newsletter{
+                        @apply w-full my-4 flex flex-col gap-2 items-center p-2 rounded-xl bg-white;
+                        &>p:nth-of-type(2){
+                            @apply text-right font-normal;
+                        }
+                        &>input[type=text]{
+                            @apply border-2 border-z-gray rounded-lg p-2;
+
+                            &:focus{
+                                @apply outline-none;
+                            }
+                        }
+                        &>button{
+                            @apply px-12 py-2 text-white rounded-lg bg-z-dark-blue transition-all;
+
+                            &:active{
+                                @apply scale-105;
+                            }
+                        }
+                    }
+                }
+
+                .news-list {
+                    @apply pe-4 py-0 basis-4/5 w-auto;
+
+                    .news-entery {
+                        @apply w-full bg-white mb-4 rounded-2xl cursor-pointer;
+
+                        .picture {
+                            @apply rounded-2xl;
+                        }
+                
+                        .content {
+                            @apply gap-4 p-8 pb-2;
+                
+                            &>button {
+                                @apply hidden
+                            }
+                
+                            h4 {
+                                @apply text-xl;
+                            }
+                
+                            p {
+                                @apply line-clamp-none bg-none text-z-dark-blue;
+                            }
+                            
+                            .controls {
+                                @apply pb-4 px-8 text-sm font-normal py-4 left-auto right-0;
+
+                                &>div{
+                                    @apply flex translate-x-0;
+                                }
+
+                                &>div:first-of-type{
+                                    @apply text-black;
+                                }
+
+                                &>div:not(:first-of-type){
+                                    @apply flex;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .show-more{
+                @apply bg-gradient-to-b from-z-cyan-0 to-transparent p-24 pt-4 mr-[0.5rem] w-[calc(100vw-1rem)];
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.lg')){
+        .news {
+            .news-container {
+                @apply mr-[3rem] top-0 w-[calc(100vw-6rem)] pt-12;
+                .timeline{
+                    @apply basis-1/5;
+                }
+                .news-list{
+                    @apply basis-4/5;
+                }
+            }
+
+            .show-more {
+                @apply mr-[3rem] top-0 w-[calc(100vw-6rem)];
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.xl')){
+        .news {
+            .news-container {
+                @apply mr-[5rem] top-0 w-[calc(100vw-10rem)] pt-24 px-16;
+                .timeline {
+                    @apply basis-1/6;
+                }
+            
+                .news-list {
+                    @apply basis-5/6;
+                }
+            }
+            
+            .show-more {
+                @apply mr-[5rem] top-0 w-[calc(100vw-10rem)];
+            }
+        }
+    }
+}

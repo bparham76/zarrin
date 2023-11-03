@@ -1,0 +1,225 @@
+@tailwind components;
+
+@layer components{
+    @media screen {
+        .services-container{
+            @apply w-full m-0 p-0;
+            &>.services-hero{
+                @apply px-4 mb-2;
+                &>.banner{
+                    @apply w-full h-16 bg-z-gray rounded-b-lg;
+                }
+            }
+            &>.content-selector{
+                @apply w-full px-4 bg-z-cyan-0 py-2;
+                &>h2{
+                    @apply text-center text-z-dark-blue text-lg;
+                }
+                &>.items{
+                    @apply w-full py-1 flex justify-center gap-2 flex-nowrap overflow-x-scroll;
+                    &>.selector-item{
+                        @apply rounded-lg bg-white text-z-dark-blue px-4 py-2 font-normal text-xs text-ellipsis whitespace-nowrap;
+                        &>.annotation{
+                            @apply hidden;
+                        }
+                    }
+                }
+            }
+            &>.services-content{
+                @apply w-full px-4 my-2 grid grid-cols-2 gap-2;
+                &>.service-item{
+                    @apply col-span-1 mb-6 p-0 rounded-xl shadow-sm shadow-z-gray;
+                    &>.picture{
+                        @apply w-full aspect-square rounded-xl bg-z-gray;
+                    }
+                    &>.content{
+                        @apply text-center text-z-dark-blue pt-2;
+                        &>p{
+                            @apply font-normal text-xs text-justify line-clamp-2;
+                        }
+                        &>button{
+                            @apply bg-z-blue rounded-lg translate-y-1/2 text-white p-2 font-normal text-sm;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.md')) {
+        .services-container {
+            &>.services-hero {
+                @apply px-8 mb-4;
+
+                &>.banner {
+                    @apply h-64;
+                }
+            }
+
+            &>.content-selector {
+                @apply px-8;
+
+                &>h2 {
+                    @apply text-xl;
+                }
+
+                &>.items {
+                    @apply py-2;
+
+                    &>.selector-item {
+                        @apply px-6 text-sm;
+                    }
+                }
+            }
+
+            &>.services-content {
+                @apply px-8 grid-cols-4;
+
+                &>.service-item {
+                    @apply mb-8;
+
+                    &>.content {
+                        @apply pt-4;
+
+                        &>p {
+                            @apply text-sm;
+                        }
+
+                        &>button {
+                            @apply text-base;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.lg')) {
+        .services-container {
+            &>.services-hero {
+                @apply px-0 mb-4;
+
+                &>.banner {
+                    @apply h-96 rounded-b-xl;
+                }
+            }
+
+            &>.content-selector {
+                @apply w-full px-24 bg-transparent py-10;
+
+                &>h2 {
+                    @apply text-4xl mb-16;
+                }
+
+                &>.items {
+                    @apply w-full py-1 flex justify-between gap-8 flex-nowrap overflow-visible;
+
+                    &>.selector-item {
+                        @apply rounded-xl relative transition-colors cursor-pointer bg-z-gray text-white px-6 py-2 font-normal text-base;
+
+                        &:hover{
+                            @apply bg-z-dark-blue;
+
+                            &>.annotation{
+                                @apply border-z-dark-blue;
+                                box-shadow: 0 0 5px 1px #2f446a;
+                            }
+                        }
+
+                        &>.annotation {
+                            @apply transition-all block absolute bottom-full -translate-y-6 right-1/2 translate-x-1/2 w-8 aspect-square bg-white rounded-full border-4 border-z-gray;
+                            &:before{
+                                @apply block w-24 h-1 bg-z-gray absolute left-full top-1/2 -translate-y-1/2 -z-10;
+                                content: '';
+                            }
+                            &:after{
+                                @apply block w-24 h-1 bg-z-gray absolute right-full top-1/2 -translate-y-1/2 -z-10;
+                                content: '';
+                            }
+                        }
+
+                        &:first-of-type{
+                            &>.annotation{
+                                &:before{
+                                    @apply hidden;
+                                }
+                            }
+                        }
+                        
+                        &:last-of-type {
+                            &>.annotation {
+                                &:after {
+                                    @apply hidden;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &>.services-content {
+                @apply px-24 gap-4 grid-cols-2 mb-8;
+
+                &>.service-item {
+                    @apply col-span-2 mb-0 p-0 rounded-xl shadow-none bg-z-cyan-0 flex flex-row-reverse;
+
+                    &>.picture {
+                        @apply basis-1/2 aspect-[3/1] rounded-xl bg-z-gray;
+                    }
+
+                    &>.content {
+                        @apply basis-1/2 h-full flex flex-col gap-4 items-center justify-center text-z-dark-blue py-2;
+
+                        &>h4{
+                            @apply text-xl;
+                        }
+                        &>p {
+                            @apply font-normal text-lg flex justify-start items-center gap-2;
+                            &:before{
+                                @apply w-2 aspect-square bg-z-light-blue rounded-full;
+                                box-shadow: 0 0 5px 0 #77c4ff;
+                                content: '';
+                            }
+                        }
+
+                        &>button {
+                            @apply bg-z-blue transition-all rounded-lg translate-y-0 text-white p-2 px-4 font-bold text-lg;
+
+                            &:hover{
+                                @apply bg-z-dark-blue;
+                            }
+
+                            &:active{
+                                @apply scale-105;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.xl')) {
+        .services-container {
+            &>.content-selector {
+                @apply px-44;
+            }
+
+            &>.services-content {
+                @apply px-44 gap-6;
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.2xl')) {
+        .services-container {
+            &>.content-selector {
+                @apply px-56;
+            }
+
+            &>.services-content {
+                @apply px-56;
+            }
+        }
+    }
+}

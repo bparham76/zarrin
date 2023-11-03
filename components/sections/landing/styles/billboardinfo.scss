@@ -1,0 +1,127 @@
+@tailwind components;
+
+@layer components{
+    @media screen and (max-width: theme('screens.md')) {
+        .billboard-section {
+            @apply w-full bg-z-dark-blue;
+
+            .data {
+                @apply w-full flex flex-col items-center bg-white rounded-t-[2rem] pt-4;
+
+                .carousel-container {
+                    @apply w-full py-4;
+                }
+
+                .title{
+                    @apply hidden;
+                }
+
+                .title-m {
+                    @apply text-white text-center text-lg rounded-lg flex gap-2 ps-2 items-center;
+                    box-shadow: 0 0 5px 0 gray;
+
+                    &.red {
+                        @apply bg-z-red;
+                    }
+
+                    &.blue {
+                        @apply bg-z-light-blue;
+                    }
+
+                    button{
+                        @apply p-2 rounded-lg bg-white text-z-dark-blue text-sm;
+                    }
+                }
+
+                .btn-container {
+                    @apply hidden;
+                }
+            }
+
+            &.high {
+                .data {
+                    @apply rounded-none;
+                }
+            }
+
+            .carousel-control {
+                @apply hidden;
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.md')) {
+        .billboard-section{
+            @apply w-full bg-gradient-to-b from-white to-z-light-blue overflow-visible relative;
+
+            .data{
+                @apply w-full left-0 top-0 -translate-y-full bg-white absolute h-20 rounded-t-full flex flex-col items-center;
+
+                .carousel-container{
+                    @apply w-3/4 relative;
+                }
+
+                .title{
+                    @apply w-1/4 text-white h-24 text-center text-ellipsis whitespace-nowrap text-3xl p-8 rounded-xl -translate-y-1/2 cursor-default;   
+
+                    &.red {
+                        @apply bg-z-red;
+                    }
+                
+                    &.blue {
+                        @apply bg-z-light-blue;
+                    }
+                }
+
+                .title-m{
+                    @apply hidden;
+                }
+
+                .btn-container{
+                    @apply w-full flex justify-end;
+
+                    button {
+                        @apply bg-z-cyan-0 transition-all text-z-dark-blue text-base rounded-lg px-6 p-1 flex items-center gap-2 translate-y-1/2 me-2;
+
+                        &:hover {
+                            @apply bg-z-dark-blue text-white;
+                        }
+                        
+                        &:active {
+                            @apply scale-105;
+                        }
+                    }
+                    
+                }
+            }
+            
+            .carousel-control {
+                @apply absolute top-1/2 transition-all -translate-y-1/2 text-xl text-white bg-z-blue p-4 -mx-2 rounded-xl z-50;
+
+                &.left{
+                    @apply left-0 -translate-x-full;
+                }
+                
+                &.right {
+                    @apply right-0 translate-x-full;
+                }
+
+                &:hover {
+                    @apply bg-z-dark-blue;
+                }
+
+                &:active{
+                    @apply scale-105;
+                }
+            }
+
+            &.higher {
+                @apply h-96;
+            }
+
+            &.high {
+                @apply h-80;
+            }
+        }
+    }
+}

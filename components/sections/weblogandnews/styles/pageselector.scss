@@ -1,0 +1,115 @@
+@tailwind components;
+
+@layer components{
+    @media screen and (max-width: theme('screens.md')){
+        .page-title{
+            @apply w-full flex flex-row-reverse gap-0 transition-colors mb-0 py-0;
+            
+            img{
+                @apply hidden;
+            }
+
+            button{
+                @apply py-5 transition-all h-32;
+                
+                &.left {
+                    @apply text-z-dark-blue bg-z-cyan-0;
+                }
+            
+                &.right {
+                    @apply text-z-cyan-0 bg-z-dark-blue;
+                }
+            }
+            
+            &.light {
+                @apply bg-z-dark-blue;
+
+                button.left {
+                    @apply basis-2/3 text-4xl rounded-r-2xl;
+                }
+
+                button.right{
+                    @apply basis-1/3;
+                }
+            }
+
+            &.dark {
+                @apply bg-z-cyan-0;
+
+                button.left{
+                    @apply basis-1/3;
+                }
+                
+                button.right {
+                    @apply basis-2/3 text-4xl rounded-l-2xl;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.md')){
+        .page-title {
+            @apply w-full relative mt-4 z-0 h-[5rem];
+
+            img{
+                @apply block -z-10;
+            }
+    
+            button {
+                @apply text-3xl font-normal absolute top-0 z-50 h-full w-[40%] -translate-y-5;
+    
+                &.right {
+                    @apply /*right-[20%]*/ right-[10%] text-z-cyan-0;
+                }
+    
+                &.left {
+                    @apply /*left-[20%]*/ left-[10%] text-z-dark-blue;
+                }
+            }
+    
+            .crown {
+                @apply absolute right-[0.5rem] top-0 w-[calc(100vw-1rem)] p-0 h-full;
+            }
+    
+            &.dark {
+                .crown.dark {
+                    @apply z-10;
+                }
+    
+                .crown.light {
+                    @apply z-0;
+                }
+            }
+    
+            &.light {
+                .crown.dark {
+                    @apply z-0;
+                }
+    
+                .crown.light {
+                    @apply z-10;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.lg')) {
+        .page-title {
+            .crown {
+                @apply absolute right-[3rem] top-0 w-[calc(100vw-6rem)];
+            }
+        }
+    }
+    
+    @media screen and (min-width: theme('screens.xl')) {
+        .page-title {
+            button {
+                @apply text-4xl top-6 -translate-y-6;
+            }
+
+            .crown {
+                @apply absolute right-[5rem] top-0 w-[calc(100vw-9.99rem)];
+            }
+        }
+    }
+}

@@ -1,0 +1,128 @@
+@tailwind components;
+
+@layer components{
+    @media screen {
+        .page-search{
+            @apply w-full p-2 grid grid-cols-8;
+
+            .categories{
+                @apply col-span-3;
+
+                button{
+                    @apply w-full flex gap-2 justify-center p-2 rounded-lg bg-z-cyan-0 text-z-dark-blue font-normal text-sm;
+                }
+
+                .list{
+                    @apply transition-all opacity-0 hidden w-full h-full bg-black bg-opacity-60 fixed top-0 left-0 z-50 items-center justify-center flex-col;
+                
+                    &>button{
+                        @apply py-4 w-3/4 bg-white rounded-none text-xl translate-y-full transition-all;
+                    }
+                }
+
+                &.show .list{
+                    @apply flex;
+                }
+
+                &.show.open .list{
+                    @apply opacity-100;
+
+                    &>button{
+                        @apply translate-y-0;
+                    }
+                }
+            }
+
+            .search-input{
+                @apply col-span-4 col-end-9 flex items-center justify-start gap-2 rounded-lg bg-z-cyan-0 ps-2;
+
+                &>input[type=text]{
+                    @apply bg-transparent outline-none w-3/4;
+                }
+
+                button{
+                    @apply hidden;
+                    &>svg{
+                        @apply hidden;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.lg')) {
+        .page-search{
+            @apply grid-cols-12 w-[calc(100vw-6rem)] mr-[3rem] px-0 pt-[2rem];
+
+            .categories{
+                @apply col-span-3 relative;
+                
+                &>button{
+                    @apply text-xl;
+                }
+
+                .list{
+                    all: unset;
+
+                    @apply absolute overflow-hidden top-full left-0 w-full z-50 bg-z-cyan-0 transition-all opacity-0 -translate-y-10 hidden;
+                    
+                    &>button{
+                        @apply w-full flex justify-center p-2 rounded-lg bg-z-cyan-0 text-z-dark-blue font-normal text-sm;
+                    }
+                }
+                
+                &.show{
+                    &>button{
+                        @apply rounded-b-none;
+                    }
+
+                    .list{
+                        @apply block;
+                    }
+                }
+
+                &.open.show .list{
+                    @apply opacity-100 translate-y-0;
+                }
+            }
+
+            .search-input{
+                @apply col-span-6 col-end-13 justify-between;
+
+                &>svg{
+                    @apply hidden;
+                }
+
+                &>input[type=text] {
+                    @apply bg-transparent outline-none w-3/4;
+                }
+
+                button {
+                    @apply flex gap-2 transition-all bg-z-dark-blue text-white h-full rounded-lg basis-1/4 justify-center items-center;
+
+                    &:active{
+                        @apply scale-105;
+                    }
+
+                    &>svg {
+                        @apply block;
+                    }
+                }
+            }
+        }
+    }
+        
+    @media screen and (min-width: theme('screens.xl')) {
+        .page-search {
+            @apply w-[calc(100vw-10rem)] mr-[5rem];
+            
+            .categories {
+                @apply col-span-2;
+            }
+
+            .search-input {
+                @apply col-span-5 col-end-13;
+            }
+        }
+    }
+}

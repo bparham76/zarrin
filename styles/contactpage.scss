@@ -1,0 +1,191 @@
+@tailwind components;
+
+@layer components {
+  @media screen {
+    .contact-container {
+      @apply w-full flex flex-col items-start;
+      & > .contact-form {
+        @apply px-12 grid grid-cols-2 gap-1;
+
+        & > h4,
+        & > p {
+          @apply col-span-2 text-center text-z-dark-blue;
+        }
+
+        & > h4 {
+          @apply text-lg mt-4;
+        }
+
+        & > p {
+          @apply mb-4;
+        }
+
+        & > input[type="text"] {
+          @apply col-span-1 rounded-lg p-2 border-2 font-normal text-base;
+          &:focus {
+            @apply outline-none border-z-dark-blue;
+          }
+        }
+
+        & > textarea {
+          @apply border-2 rounded-lg p-2 text-base font-normal col-span-2 max-h-24 min-h-[6rem];
+
+          &:focus {
+            @apply outline-none border-z-dark-blue;
+          }
+        }
+
+        & > button {
+          @apply rounded-lg bg-z-blue text-white my-2 px-4 py-1 col-span-1 col-end-3;
+          &:disabled{
+            @apply bg-z-gray transition-none;
+          }
+        }
+      }
+
+      & > .picture {
+        @apply flex px-12 justify-center items-center;
+
+        & > div {
+          @apply basis-1/2 h-48;
+
+          // &:first-of-type{
+          //     @apply basis-2/3;
+          // }
+
+          &:last-of-type {
+            @apply hidden;
+          }
+        }
+      }
+
+      & > .details {
+        @apply px-12;
+
+        & > div {
+          @apply px-4 py-8 text-justify text-white bg-z-dark-blue rounded-lg;
+
+          & > h4 {
+            @apply font-bold text-xl;
+          }
+          & > p {
+            @apply mb-4 font-normal;
+          }
+        }
+      }
+
+      & > .newsletter {
+        @apply my-8 p-1 px-12 text-z-dark-blue flex flex-col gap-2 w-full;
+
+        & > img {
+          @apply hidden;
+        }
+
+        h4 {
+          @apply text-xl;
+        }
+        p {
+          @apply text-sm;
+        }
+
+        & > div {
+          @apply p-0 bg-z-cyan-0 rounded-lg flex justify-between;
+          & > input[type="text"] {
+            @apply p-1 py-1 border border-transparent bg-transparent;
+            &:focus {
+              @apply outline-none;
+            }
+          }
+          & > button {
+            @apply px-4 py-1 text-white bg-z-dark-blue rounded-lg;
+            &:disabled {
+              @apply bg-z-gray transition-none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: theme("screens.md")) {
+    .contact-container {
+      @apply flex flex-row flex-wrap gap-0 px-12 mt-24;
+
+      & > .contact-form {
+        @apply basis-1/2 order-2;
+
+        & > button {
+          @apply py-2 transition-all;
+
+          &:not(:disabled){
+              &:active {
+                @apply scale-105;
+            }
+          }
+        }
+      }
+
+      & > .picture {
+        @apply basis-1/2 order-1 p-0;
+
+        & > div {
+          @apply hidden;
+
+          &:last-of-type {
+            @apply block p-0 scale-[200%] translate-y-1/2;
+          }
+        }
+      }
+
+      & > .details {
+        @apply basis-full order-3 mt-48;
+
+        & > div {
+          @apply bg-transparent text-z-dark-blue text-lg;
+          & > h4 {
+            @apply text-2xl;
+          }
+        }
+      }
+
+      & > .newsletter {
+        @apply order-4 pt-24 relative;
+
+        & > img {
+          @apply block absolute w-full h-full left-0 bottom-0 -translate-x-24 translate-y-14 -z-10;
+        }
+
+        & > div {
+          @apply bg-transparent border border-z-dark-blue;
+
+          & > input[type="text"] {
+            @apply p-4 w-full;
+          }
+
+          & > button {
+            @apply px-12 transition-all;
+
+            &:not(:disabled){
+
+              &:active {
+                @apply scale-105;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: theme("screens.lg")) {
+    .contact-container {
+      @apply px-36 mt-16;
+    }
+  }
+
+  @media screen and (min-width: theme("screens.xl")) {
+    .contact-container {
+      @apply px-64 mt-5;
+    }
+  }
+}

@@ -1,0 +1,307 @@
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities{
+    @media screen {
+        .blog2x2{
+            @apply bg-z-cyan-0 w-full h-full relative overflow-hidden;
+
+            &:hover .picture img{
+                scale: 1.2;
+            }
+
+            .picture{
+                @apply absolute top-0 left-0 w-full h-full;
+
+                img{
+                    @apply transition-all;
+                }
+
+                .annotation{
+                    @apply absolute text-white top-4 right-4 h-10 w-32 rounded-full bg-z-green flex gap-2 items-center justify-center;
+                    
+                    &.practical{
+                        @apply bg-z-blue;
+                    }
+                }
+            }
+
+            .info{
+                @apply absolute text-white w-full p-4 h-1/4 flex flex-col justify-around bottom-0 right-0 bg-gradient-to-t from-black to-transparent;
+                .headline{
+                    @apply w-full pb-2;
+                    &>p{
+                        @apply text-2xl text-right line-clamp-1 text-ellipsis whitespace-nowrap;
+                    }
+                }
+                .details{
+                    @apply hidden;
+                }
+                .entities{
+                    @apply w-full flex gap-8 text-base font-normal pb-2;
+                    &>div{
+                        @apply flex gap-2;
+                    }
+                }
+                .actions{
+                    @apply w-full hidden gap-4 justify-end pb-2 font-normal text-base;
+                }
+            }
+        }
+
+        .blog2x1{
+            @apply bg-z-cyan-0 h-full w-full flex flex-row overflow-hidden;
+
+            // &:nth-of-type(3n-1){
+            //     @apply flex-row-reverse;
+            // }
+
+            &:hover .picture img{
+                scale: 1.2;
+            }
+
+            .picture{
+                @apply basis-1/3 aspect-square bg-z-gray rounded-lg overflow-hidden;
+
+                img{
+                    @apply transition-all;
+                }
+
+                .annotation{
+                    @apply hidden;
+                }
+            }
+
+            .info{
+                @apply basis-2/3 px-2 pt-4 grid grid-cols-2 text-z-dark-blue font-normal text-base;
+                .headline{
+                    @apply col-span-full font-bold text-xl;
+                }
+                .details{
+                    @apply col-span-full line-clamp-2;
+                }
+                .entities{
+                    @apply col-span-1 flex gap-4 items-center justify-start font-bold;
+
+                    &>div{
+                        @apply relative cursor-pointer;
+                        p{
+                            @apply hidden absolute top-0 right-0 -translate-y-full rounded-full rounded-br-none h-6 w-32 bg-z-dark-blue text-white font-normal justify-center items-center;
+                        }
+
+                        &:hover p{
+                            @apply flex;
+                        }
+
+                        &:nth-of-type(2){
+                            @apply hidden;
+                        }
+                    }
+                }
+                .actions{
+                    @apply col-span-1 hidden gap-4 items-center justify-end font-bold;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.md')) {
+        .blog2x2{
+            .info{
+                .actions{
+                    @apply flex;
+                }
+            }
+        }
+
+        .blog2x1{
+            .picture{
+                @apply basis-1/2 aspect-auto;
+            }
+
+            .info{
+                @apply basis-1/2;
+
+                .entities{
+                    &>div:nth-of-type(2){
+                        @apply block;
+                    }
+                }
+
+                .actions{
+                    @apply flex;
+                }
+            }
+
+            &:nth-of-type(3n) {
+                @apply flex-row-reverse;
+            }
+        }
+    }
+}
+
+@layer components{
+    @media screen{
+        .blog {
+            @apply w-full z-10 p-0;
+
+            .blog-container {
+                @apply overflow-x-hidden;
+                .stack {
+                    @apply grid grid-cols-1 gap-2 p-2;
+                    .blog-post {
+                        @apply bg-z-light-blue rounded-lg p-0;
+                    }
+
+                    // &:nth-of-type(1){
+                    //     .blog-post:nth-of-type(1){
+                    //         @apply aspect-square blog2x2;
+                    //     }
+                    // }
+                }
+            }
+            .show-more {
+                @apply w-full flex justify-center;
+            
+                &>button {
+                    @apply rounded-lg px-8 py-4 text-lg flex gap-2 justify-center bg-z-cyan-0 text-z-dark-blue;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.md')) {
+        .blog{
+            .blog-container{
+                @apply text-white mr-[0.5rem] w-[calc(100vw-1rem)] bg-transparent top-0;
+
+                .stack {
+                    @apply w-full /*m-0 pb-8*/ px-4 bg-z-dark-blue gap-4 grid-cols-2 grid-rows-2;
+
+                    .blog-post{
+                        @apply col-span-1 row-span-1 bg-z-light-blue rounded-xl p-0 cursor-pointer;
+                    }
+
+                    &:nth-of-type(1){
+                        @apply pt-10;
+                    }
+
+                    &:last-of-type{
+                        @apply bg-transparent bg-gradient-to-b from-z-dark-blue to-transparent;
+                    }
+
+                    // &:nth-of-type(2n-1){
+                    //     .blog-post:nth-of-type(1) {
+                    //         @apply row-span-2 aspect-square blog2x2;
+                    //     }
+                    //     .blog-post:not(:nth-of-type(1)){
+                    //         @apply blog2x1;
+                    //     }
+                    // }
+
+                    // &:nth-of-type(2n){
+                    //     .blog-post:nth-of-type(2) {
+                    //         @apply row-span-2 aspect-square blog2x2;
+                    //     }
+                    //     .blog-post:not(:nth-of-type(2)) {
+                    //         @apply blog2x1;
+                    //     }
+                    // }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.lg')) {
+        .blog{
+            .blog-container{
+                @apply mr-[3rem] top-0 w-[calc(100vw-6rem)];
+
+                .stack{
+                    @apply px-16;
+                }
+
+                .stack:nth-of-type(1) {
+                    @apply pt-16;
+                }
+            }
+
+            .show-more>button{
+                @apply transition-all;
+                &:active{
+                    @apply scale-105;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.xl')) {
+        .blog .blog-container {
+            @apply mr-[5rem] top-0 w-[calc(100vw-10rem)];
+            
+            .stack{
+                @apply px-24;
+            }
+            
+            .stack:nth-of-type(1) {
+                @apply pt-24;
+            }
+        }
+    }
+
+    @media screen and (max-width: theme('screens.md')){
+        .blog .blog-container .stack{
+            @apply my-0;
+            &:first-of-type{
+                .blog-post{
+                    &:first-of-type{
+                        @apply aspect-square blog2x2;
+                    }
+
+                    &:not(:first-of-type){
+                        @apply blog2x1;
+                    }
+                }
+            }
+
+            &:not(:first-of-type){
+                .blog-post{
+                    @apply blog2x1;
+                }
+            }
+
+            &:last-of-type{
+                @apply mb-2;
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.md')) {
+        .blog .blog-container .stack {
+            &:nth-last-of-type(2n-1){
+                .blog-post{
+                    &:first-of-type{
+                        @apply row-span-2 blog2x2 aspect-square;
+                    }
+
+                    &:not(:first-of-type){
+                        @apply row-span-1 blog2x1;
+                    }
+                }
+            }
+
+            &:nth-last-of-type(2n){
+                .blog-post{
+                    &:nth-of-type(2){
+                        @apply row-span-2 blog2x2 aspect-square;
+                    }
+
+                    &:not(:nth-of-type(2)){
+                        @apply row-span-1 blog2x1;
+                        
+                    }
+                }
+            }
+        }
+    }
+}

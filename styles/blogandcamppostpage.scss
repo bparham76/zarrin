@@ -1,0 +1,265 @@
+@tailwind components;
+
+@layer components{
+    @media screen {
+        .blogpost-container{
+            @apply w-full m-0 p-0;
+            .blogpost-hero{
+                @apply w-full aspect-square bg-z-gray rounded-b-xl m-0 p-0 relative;
+                .post-info{
+                    @apply w-full bg-z-blue bg-opacity-60 h-1/3 translate-y-[150%] text-white flex justify-end flex-wrap p-4 items-center relative;
+
+                    &>h4{
+                        @apply text-lg basis-full mt-10 text-center;
+                    }
+
+                    .post-details{
+                        @apply flex gap-0 mt-4;
+                        &>p{
+                            @apply p-1 flex gap-2 font-normal text-xs;
+                        }
+                    }
+
+                    .post-annotation{
+                        @apply absolute top-4 right-4 bg-z-green rounded-full w-fit p-1 px-2 text-xs font-normal flex gap-2;
+                        &.blue{
+                            @apply bg-z-dark-blue;
+                        }
+
+                        &.light-blue{
+                            @apply bg-z-light-blue;
+                        }
+                    }
+                }
+            }
+            
+            .blogpost-content{
+                @apply w-full px-8 my-4 text-justify;
+                h1{
+                    @apply text-2xl mb-2 ;
+                }
+                h2{
+                    @apply text-xl mb-2 ;
+                }
+                h3{
+                    @apply text-lg mb-1 ;
+                }
+                p{
+                    @apply py-2 text-base font-normal ;
+                }
+            }
+
+            .sharing{
+                @apply w-full p-2 pr-8 flex gap-2;
+
+                &>button{
+                    @apply p-2 aspect-square flex items-center justify-center shadow-md shadow-z-gray rounded-lg transition-all;
+
+                    &:active{
+                        @apply scale-105;
+                    }
+                }
+
+                &>div{
+                    @apply p-2 flex gap-1 items-center justify-start rounded-lg shadow-md shadow-z-gray;
+
+                    &>p{
+                        @apply pl-2 font-normal;
+                    }
+                }
+            }
+
+            .comments{
+                @apply px-8 flex justify-center mt-4;
+            }
+
+            .related-posts{
+                @apply w-full px-8 grid grid-cols-2 gap-2 bg-z-cyan-0 py-2 relative;
+
+                &>p{
+                    @apply col-span-full mt-4 text-z-dark-blue text-xl;
+                }
+
+                &>button{
+                    @apply col-span-2 mx-auto my-2 px-6 py-2 bg-transparent rounded-lg text-z-gray flex gap-2 items-center;
+                }
+
+                &:after{
+                    @apply absolute w-full h-1/3 bottom-0 left-0 bg-z-cyan-0 translate-y-full -z-10;
+                    content: '';
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.md')) {
+        .blogpost-container {
+            .blogpost-hero {
+                @apply aspect-video rounded-b-2xl;
+
+                .post-info {
+                    @apply px-12;
+
+                    &>h4 {
+                        @apply text-2xl mt-4 p-0;
+                    }
+
+                    .post-details {
+                        @apply mt-4 gap-2;
+
+                        &>p {
+                            @apply text-sm;
+                        }
+                    }
+
+                    .post-annotation {
+                        @apply right-12 text-sm;
+                    }
+                }
+            }
+
+            .sharing {
+                @apply pr-12;
+            }
+
+            .comments{
+                @apply px-12 mt-8;
+            }
+
+            .related-posts {
+                @apply px-12 mt-8;
+
+                &>button{
+                    @apply col-span-1 text-white bg-z-gray col-end-3 ml-0 w-fit mr-auto transition-all;
+
+                    &:active{
+                        @apply scale-105;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.lg')) {
+        .blogpost-container {
+            .blogpost-hero {
+                .post-info {
+                    @apply px-24;
+
+                    &>h4 {
+                        @apply text-4xl mt-8;
+                    }
+
+                    .post-details {
+                        @apply mt-4;
+
+                        &>p {
+                            @apply text-base;
+                        }
+                    }
+
+                    .post-annotation {
+                        @apply right-24;
+                    }
+                }
+            }
+            
+            .blogpost-content {
+                @apply px-24;
+                &>h2{
+                    @apply text-2xl;
+                }
+                &>p{
+                    @apply text-lg;
+                }
+            }
+
+            .sharing {
+                @apply pr-24;
+            }
+
+            .comments {
+                @apply px-24 mt-12;
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.xl')) {
+        .blogpost-container {
+            .blogpost-hero {
+                @apply aspect-auto h-[80vh];
+                .post-info {
+                    @apply px-64;
+
+                    .post-details {
+                        @apply mt-8;
+                    }
+
+                    .post-annotation {
+                        @apply right-64;
+                    }
+                }
+            }
+
+            .blogpost-content {
+                @apply px-64;
+
+                &>h2{
+                    @apply text-4xl my-12;
+                }
+            }
+
+            .sharing {
+                @apply pr-64;
+            }
+
+            .comments {
+                @apply px-64;
+            }
+            
+            .related-posts {
+                @apply px-32 gap-10;
+
+                &>p{
+                    @apply text-2xl;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: theme('screens.2xl')) {
+        .blogpost-container {
+            .blogpost-hero {
+                @apply aspect-auto h-[80vh];
+
+                .post-info {
+                    @apply px-80;
+
+                    .post-details {
+                        @apply mt-8;
+                    }
+
+                    .post-annotation {
+                        @apply right-80;
+                    }
+                }
+            }
+
+            .blogpost-content {
+                @apply px-80;
+            }
+
+            .sharing {
+                @apply pr-80;
+            }
+
+            .comments {
+                @apply px-80;
+            }
+
+            .related-posts{
+                @apply px-40;
+            }
+        }
+    }
+}
